@@ -4,25 +4,33 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>お問い合わせ | Toco Works</title>
-<meta name="description" content="Toco Works のアプリについてのご質問・不具合のご報告はこちらから。">
+<meta name="description" content="Toco Works のアプリについてのご質問・不具合のご報告・ご要望はこちらから。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Zen+Maru+Gothic:wght@500;700&display=swap">
 <link rel="stylesheet" href="/assets/site.css">
+<link rel="icon" href="/assets/mark.svg" type="image/svg+xml">
 </head>
 <body>
-<header class="top">
-  <a class="brand" href="/">Toco Works</a>
-  <nav><a href="/#apps">アプリ</a><a href="/contact/">お問い合わせ</a><a href="/privacy/">プライバシーポリシー</a></nav>
-</header>
+<header class="top"><div class="in">
+  <a class="brand" href="/"><img class="mark" src="/assets/mark.svg" alt="" width="34" height="34">Toco Works</a>
+  <nav><a href="/#works">つくっているもの</a><a href="/#about">大切にしていること</a><a class="keep" href="/contact/" aria-current="page">お問い合わせ</a></nav>
+</div></header>
 
-<main>
+<main class="page">
   <h1>お問い合わせ</h1>
-  <p>アプリのご質問、不具合のご報告、その他のご連絡は、メールでお願いします。返信まで数日いただくことがあります。</p>
+  <p class="updated">返信まで数日いただくことがあります。</p>
+  <p>アプリのご質問、不具合のご報告、ご要望などは、メールでお願いします。作っている本人が読んで、お返事します。</p>
 
-  <p><a class="btn" href="mailto:info@toco-works.com?subject=%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B">メールを送る（info@toco-works.com）</a></p>
-  <p class="note">ボタンでメールアプリが開かないときは、お使いのメールから <strong>info@toco-works.com</strong> 宛てに送ってください。</p>
+  <div class="mailbox">
+    <span class="addr">info@toco-works.com</span>
+    <a class="btn orange" href="mailto:info@toco-works.com?subject=%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B">メールアプリで書く</a>
+    <span class="note">ボタンでメールアプリが開かないときは、お使いのメールから上のアドレス宛てに送ってください。</span>
+  </div>
 
   <h2>早く調べられるように、書いていただきたいこと</h2>
   <table>
-    <tr><th>アプリ名</th><td>例：衛生管理者2種</td></tr>
+    <tr><th>アプリの名前</th><td>お使いのアプリの名前（ストアに表示されている名前）</td></tr>
     <tr><th>お使いの機種と OS のバージョン</th><td>例：iPhone 15 / iOS 19.1、Pixel 8 / Android 16</td></tr>
     <tr><th>起きたこと</th><td>どの画面で、何をしたときに、どうなったか。可能ならスクリーンショット</td></tr>
   </table>
@@ -34,9 +42,10 @@
   <p>メールに書かれた情報は、お問い合わせへの返信と不具合の調査にだけ使い、第三者に渡しません。くわしくは <a href="/privacy/">プライバシーポリシー</a> をご覧ください。</p>
 </main>
 
-<footer>
+<footer><div class="in">
+  <a class="brand" href="/"><img class="mark" src="/assets/mark.svg" alt="" width="28" height="28">Toco Works</a>
   <nav><a href="/contact/">お問い合わせ</a><a href="/privacy/">プライバシーポリシー</a><a href="/tokushoho/">特定商取引法に基づく表記</a></nav>
-  <p>© Toco Works</p>
-</footer>
+  <span>© Toco Works</span>
+</div></footer>
 </body>
 </html>
