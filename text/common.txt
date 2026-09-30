@@ -1,0 +1,28 @@
+# 全部のページに共通の中身です（上と下のメニュー、屋号、メールアドレス）。
+# 直すときは、編集ページ https://toco-works.com/edit/ を使うのがかんたんです。
+# 「#」で始まる行は説明で、サイトには出ません。【 】の行が、ブロックの始まりです。
+
+【サイト】
+屋号: Toco Works
+メール: info@toco-works.com
+下の一言: © Toco Works
+改行しない言葉: Toco Works、App Store、Google Play、GitHub Pages、Google Fonts、GitHub, Inc.、Google LLC、Cloudflare, Inc.、Gmail、IP アドレス、ひとつずつ、原則として、iPhone 15 / iOS 19.1、Pixel 8 / Android 16
+
+# メニューは、1行に1つ。「文字 | リンク」の順に書きます。
+# 上のメニューは、3つ目に「スマホでも出す」と書いたものだけが、スマホの画面にも出ます。
+【上のメニュー】
+つくっているもの | /#works
+大切にしていること | /#about
+お問い合わせ | /contact/ | スマホでも出す
+
+【下のメニュー】
+お問い合わせ | /contact/
+プライバシーポリシー | /privacy/
+特定商取引法に基づく表記 | /tokushoho/
+
+# 編集ページが使う一覧です（名前 | リンク | ファイル）。ページを増やすときだけ変えます。
+【ページ一覧】
+トップ | / | home
+お問い合わせ | /contact/ | contact
+プライバシーポリシー | /privacy/ | privacy
+特定商取引法に基づく表記 | /tokushoho/ | tokushoho

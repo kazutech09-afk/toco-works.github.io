@@ -1,4 +1,4 @@
-/* Toco Works — サイト共通の見た目（2026-09-30 デザイン刷新） */
+/* Toco Works — サイト共通の見た目（2026-09-30 デザイン刷新。同日、text/*.txt から組み立てる形に変更） */
 :root{
   --bg:#FBF8F3; --bg-2:#F3EDE3; --panel:#FFFFFF; --ink:#1F2A33; --ink-2:#5C6870; --line:#E7E0D5;
   --navy:#1A2E4A; --navy-2:#24405F; --orange:#E8873A; --orange-2:#F4B179; --peach:#FBE7D6; --sage:#DCE8E2; --sky:#DCE6F2;
@@ -33,14 +33,16 @@ main{padding-bottom:64px}
 
 /* ヒーロー */
 .hero{position:relative;padding:72px 0 56px;overflow:hidden}
-.hero .in{display:grid;gap:28px;align-items:center;grid-template-columns:1fr}
-@media(min-width:820px){.hero{padding:96px 0 72px}.hero .in{grid-template-columns:1.15fr .85fr}}
+.hero-in{display:grid;gap:28px;align-items:center;grid-template-columns:1fr}
+@media(min-width:820px){.hero{padding:96px 0 72px}.hero-in{grid-template-columns:1.15fr .85fr}.hero-in.noart{grid-template-columns:1fr}}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.82rem;font-weight:700;letter-spacing:.14em;color:var(--orange);text-transform:uppercase;margin-bottom:14px}
 .eyebrow::before{content:"";width:22px;height:2px;background:var(--orange);border-radius:2px}
-.hero h1{font-family:var(--display);font-size:clamp(1.75rem,4.2vw,2.6rem);line-height:1.4;margin:0 0 16px;color:var(--navy);letter-spacing:.01em}
+.hero h1{font-family:var(--display);font-size:clamp(1.75rem,4.2vw,2.4rem);line-height:1.4;margin:0 0 16px;color:var(--navy);letter-spacing:.01em}
 .hero h1 .nb,.nb{white-space:nowrap}
 p,li,h1,h2,h3,td,th{text-wrap:pretty}
-.hero h1 em{font-style:normal;background:linear-gradient(transparent 62%,var(--peach) 62%);padding:0 .1em}
+em{font-style:normal;font-weight:700}
+.nb wbr,.hero h1 em wbr{display:none}
+.hero h1 em{white-space:nowrap;background:linear-gradient(transparent 62%,var(--peach) 62%);padding:0 .1em}
 .hero p{margin:0 0 24px;color:var(--ink-2);font-size:1.05rem;max-width:34em}
 .actions{display:flex;gap:12px;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:#fff;text-decoration:none;font-weight:700;padding:13px 22px;border-radius:999px;box-shadow:0 10px 24px rgba(26,46,74,.22);transition:transform .15s,box-shadow .15s}
@@ -70,7 +72,7 @@ section{padding:36px 0}
 .sec-h span{font-size:.8rem;letter-spacing:.14em;color:var(--orange);font-weight:700}
 .lead{color:var(--ink-2);margin:0 0 22px;max-width:40em}
 .cards{display:grid;gap:16px;grid-template-columns:1fr}
-@media(min-width:720px){.cards{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:720px){.cards{grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}.cards.cols-1{grid-template-columns:1fr}.cards.cols-2{grid-template-columns:repeat(2,1fr)}.cards.cols-3{grid-template-columns:repeat(3,1fr)}.cards.cols-4{grid-template-columns:repeat(4,1fr)}}
 .card{background:var(--panel);border-radius:var(--radius);padding:24px 22px 20px;border:1px solid rgba(231,224,213,.9);box-shadow:0 8px 24px rgba(31,42,51,.05);transition:transform .15s,box-shadow .15s}
 .card:hover{transform:translateY(-3px);box-shadow:var(--shadow)}
 .ico{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;margin-bottom:14px}
@@ -118,3 +120,41 @@ footer nav a:hover{color:var(--orange)}
 footer .brand{font-size:1rem}
 
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* ---- text/*.txt から組み立てるための追加（2026-09-30） ---- */
+/* 中身を読み込むまでの一瞬、古い文が見えないようにする（JavaScript が動くときだけ） */
+.pending main{visibility:hidden}
+.card .more{margin-top:12px;display:flex;flex-wrap:wrap;gap:6px 16px;font-size:.92rem;font-weight:700}
+.card .more a::after{content:" →"}
+.actions.center{justify-content:center}
+/* 「広い」ページの中の文章 */
+.prose{max-width:760px}
+.prose h2{font-family:var(--display);font-size:1.2rem;margin:34px 0 10px;color:var(--navy);padding-left:14px;border-left:4px solid var(--orange);line-height:1.4}
+.prose>h2:first-child{margin-top:0}
+.prose p{margin:0 0 12px}
+.prose .note{color:var(--ink-2);font-size:.92rem}
+.prose table{border-collapse:separate;border-spacing:0;width:100%;margin:10px 0 18px;font-size:.96rem;background:var(--panel);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.prose th,.prose td{padding:12px 14px;text-align:left;vertical-align:top;border-top:1px solid var(--line)}
+.prose tr:first-child th,.prose tr:first-child td{border-top:0}
+.prose th{background:var(--bg-2);width:36%;font-weight:700;color:var(--navy)}
+.page ul,.prose ul{margin:0 0 12px;padding-left:1.3em}
+.page li,.prose li{margin:2px 0}
+/* 「読みもの」ページのブロック */
+.page .blk{margin:0 0 8px}
+.page .blk .sec-h,.page .blk .cards,.page .blk .values,.page .blk .cta,.page .blk .actions{margin-top:22px;margin-bottom:22px}
+.page .hero{padding:24px 0}
+/* 画像 */
+.pic{margin:0 auto;max-width:720px;text-align:center}
+.pic.s{max-width:360px}
+.pic.l{max-width:1040px}
+.pic img,.split .ph img{width:100%;height:auto;border-radius:var(--radius);box-shadow:var(--shadow);background:var(--panel)}
+.pic figcaption{margin-top:10px;color:var(--ink-2);font-size:.9rem}
+.split{display:grid;gap:24px;align-items:center;grid-template-columns:1fr}
+@media(min-width:720px){.split{grid-template-columns:1fr 1fr;gap:40px}.split.rev .ph{order:2}}
+.split h2{font-family:var(--display);font-size:1.4rem;margin:0 0 8px;color:var(--navy);padding:0;border:0;line-height:1.45}
+.split p{margin:0 0 18px;color:var(--ink-2)}
+.noimg{border:2px dashed var(--line);border-radius:var(--radius);padding:28px 16px;text-align:center;color:var(--ink-2);font-size:.9rem;background:var(--panel)}
+/* 書き方の確認（アドレスの最後に ?check を付けたとき）と、編集ページの下見 */
+.checkbar{position:fixed;left:12px;right:12px;bottom:12px;z-index:50;max-height:45vh;overflow:auto;background:#fff;border:2px solid var(--orange);border-radius:14px;padding:12px 16px;box-shadow:var(--shadow);font-size:.9rem;line-height:1.6}
+.checkbar ul{margin:6px 0 0;padding-left:1.2em}
+.picked{outline:3px solid var(--orange);outline-offset:4px;border-radius:12px}

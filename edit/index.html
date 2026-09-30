@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ja" data-editor>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>サイト編集ツール | Toco Works</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="stylesheet" href="/assets/edit.css">
+<link rel="icon" href="/assets/mark.svg" type="image/svg+xml">
+<script src="/assets/site.js" defer></script>
+<script src="/assets/edit.js" defer></script>
+</head>
+<body>
+<div class="top">
+  <b>Toco Works サイト編集ツール</b>
+  <button class="btn ghost" id="btn-help" type="button">使い方</button>
+  <span class="sp"></span>
+  <button class="btn ghost" id="btn-setup" type="button">保存の準備</button>
+  <button class="btn ghost" id="btn-reset" type="button">公開中の内容に戻す</button>
+  <button class="btn warn" id="btn-save" type="button">保存して公開する</button>
+</div>
+
+<div class="mbar">
+  <select id="file" aria-label="直すページ"></select>
+  <span class="seg"><button id="tabForms" type="button" class="on">直す</button><button id="tabView" type="button">下見</button></span>
+</div>
+
+<div class="layout" id="layout">
+  <div id="nav"></div>
+  <div id="form"></div>
+  <div class="pv">
+    <div class="pv-bar">
+      <span class="seg"><button id="wPc" type="button" class="on">PC</button><button id="wMobile" type="button">スマホ</button></span>
+      <span id="pv-name" class="pv-name"></span>
+      <span class="sp"></span>
+      <a class="btn ghost" id="btn-open" target="_blank" rel="noopener">公開中のページを開く</a>
+    </div>
+    <div class="pv-body"><iframe id="pv" title="下見"></iframe></div>
+  </div>
+</div>
+<div class="status" id="status">読み込んでいます…</div>
+<div id="toast" role="status"></div>
+
+<!-- 使い方 -->
+<div class="modal" id="help"><div class="box">
+  <button class="btn ghost close" data-close type="button">閉じる</button>
+  <h2>使い方</h2>
+  <ol>
+    <li><b>直す</b>：左でページを選び、真ん中の入力欄で文・リンクを直します。右の下見に、すぐ反映されます。メニューや屋号は、左の「共通」で直します。</li>
+    <li><b>並びを変える・足す・消す</b>：各ブロックの右上の「↑」「↓」「複製」「削除」を使います。新しいブロックは、いちばん下の「ブロックを追加」から入れます（えらんでいるブロックのすぐ下に入ります）。</li>
+    <li><b>下見</b>：右上の「PC／スマホ」で幅を変えられます。各ブロックの「下見で見る」を押すと、下見のその部分へ移動します。下見の中のブロックを押すと、その入力欄へ移動します。下見の中のリンクは、押しても移動しません（行き先が下に出ます）。</li>
+    <li><b>リンクの書き方</b>：ほかのページは <code>/contact/</code>、ページの中の場所は <code>/#works</code>（「目印」の名前）、外のサイトは <code>https://...</code>、メールは <code>{メール}</code>。入力欄を押すと候補が出ます。</li>
+    <li><b>画像</b>：「画像を選ぶ」でパソコンやスマホの画像を選ぶと、位置情報などを消して小さくしてから、サイトに入れます（「保存の準備」が済んでいるとき）。人の顔や、自宅・学校が分かる画像は使いません。</li>
+    <li><b>保存して公開する</b>：右上のボタンを押すと、サイトに反映されます（1〜2分かかります）。はじめて使うときは、先に「保存の準備」を1回だけ行います。</li>
+    <li><b>途中の内容</b>：直している途中の内容は、このブラウザの中に自動で残ります（別のパソコンやスマホには残りません）。捨てたいときは「公開中の内容に戻す」。</li>
+    <li><b>まちがえて保存したとき</b>：前の版は残っています。チャットで Claude に「サイトを前の版に戻したい」と伝えてください。</li>
+  </ol>
+  <h3>文の書き方</h3>
+  <table>
+    <tr><th>目立たせる</th><td><code>**ここを目立たせる**</code></td></tr>
+    <tr><th>文の中のリンク</th><td><code>[プライバシーポリシー](/privacy/)</code></td></tr>
+    <tr><th>改行</th><td>改行したい所で、そのまま改行する（長い文の折り返しは、切りのいい所で自動）</td></tr>
+    <tr><th>メールアドレス・屋号</th><td><code>{メール}</code>・<code>{屋号}</code> と書くと、共通の設定に置きかわる</td></tr>
+    <tr><th colspan="2" class="sub">ここから下は「本文」の中だけで使える</th></tr>
+    <tr><th>小さな見出し</th><td><code>■ 見出しの文字</code></td></tr>
+    <tr><th>段落を分ける</th><td>1行あける</td></tr>
+    <tr><th>表</th><td><code>項目 ｜ 内容</code>（1行に1つ。続けて書くと1つの表になる）</td></tr>
+    <tr><th>箇条書き</th><td><code>・1つ目</code></td></tr>
+    <tr><th>小さな注記</th><td><code>※ 注記の文</code></td></tr>
+  </table>
+  <p class="muted">色・文字の大きさ・新しい種類のブロックは、このツールでは変えられません。チャットで Claude に伝えてください。</p>
+</div></div>
+
+<!-- 保存の準備（GitHub の合言葉＝トークン） -->
+<div class="modal" id="setup"><div class="box">
+  <button class="btn ghost close" data-close type="button">閉じる</button>
+  <h2>保存の準備（はじめの1回だけ）</h2>
+  <p>このツールからサイトに保存するには、GitHub で「このサイトの中身だけを書きかえてよい」という鍵（トークン）を作り、ここに入れます。鍵は、このブラウザの中にだけ残ります。</p>
+  <ol>
+    <li><a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">GitHub の「鍵を作る画面」を開く</a>（ログインを求められたら、GitHub のアカウントでログイン）</li>
+    <li><b>Token name</b>：<code>toco-works-site-editor</code></li>
+    <li><b>Expiration</b>：「Custom」を選び、1年後の日付にする（期限が切れたら、同じ手順で作り直します）</li>
+    <li><b>Resource owner</b>：<code>toco-works</code> を選ぶ</li>
+    <li><b>Repository access</b>：「Only select repositories」→ <code>toco-works.github.io</code> だけを選ぶ</li>
+    <li><b>Permissions</b>：「Repository permissions」の <b>Contents</b> を「Read and write」にする（ほかは変えない）</li>
+    <li>いちばん下の緑の <b>Generate token</b> を押す → 出てきた <code>github_pat_</code> で始まる文字を、コピーする</li>
+    <li>下の欄に貼って、「確かめて、このブラウザに覚えさせる」を押す</li>
+  </ol>
+  <div class="f"><label for="token">鍵（トークン）</label><input type="password" id="token" autocomplete="off" spellcheck="false" placeholder="github_pat_..."></div>
+  <p><button class="btn" id="btn-token-save" type="button">確かめて、このブラウザに覚えさせる</button>
+     <button class="btn danger" id="btn-token-clear" type="button">このブラウザから鍵を消す</button></p>
+  <p id="token-state" class="muted"></p>
+  <p class="muted"><b>鍵のあつかい</b>：鍵は、チャット・メール・ファイルに書かないでください。自分のパソコン・スマホだけで使い、人と共用のパソコンでは使いません。なくした・見られたかもしれないときは、GitHub の Settings → Developer settings → Personal access tokens で、その鍵を「Delete」します。</p>
+  <details><summary>鍵を使わずに保存する（コピーして GitHub に貼る）</summary>
+    <p class="muted">「保存して公開する」を押したときに、鍵がなければ、コピーして貼る手順が出ます。</p>
+  </details>
+</div></div>
+
+<!-- 鍵を使わない保存（コピーして貼る） -->
+<div class="modal" id="manual"><div class="box">
+  <button class="btn ghost close" data-close type="button">閉じる</button>
+  <h2>保存のしかた（コピーして GitHub に貼る）</h2>
+  <p class="muted">ボタン1つで保存したいときは、「保存の準備」を先に行ってください。</p>
+  <p id="manual-what"></p>
+  <ol>
+    <li><button class="btn" id="btn-copy" type="button">中身をコピーする</button> <span id="copied" class="ok"></span></li>
+    <li><a id="gh" class="btn ghost" target="_blank" rel="noopener">GitHub の編集画面を開く</a></li>
+    <li>GitHub の画面で、文字が並んでいる枠の中を1回クリック → <b>Ctrl＋A</b>（全部選ぶ）→ <b>Ctrl＋V</b>（貼りつけ）<br><span class="muted">iPhone は、枠の中を長押し →「すべてを選択」→「ペースト」</span></li>
+    <li>右上の緑のボタン <b>「Commit changes...」</b> → 出てきた窓の緑の <b>「Commit changes」</b></li>
+    <li>1〜2分待って、サイトを開いて確かめる</li>
+    <li><button class="btn ghost" id="btn-manual-done" type="button">保存できたら、ここを押す（途中の内容を片づける）</button></li>
+  </ol>
+  <details><summary>コピーできないとき（中身を手で選んでコピーする）</summary>
+    <textarea id="out" readonly rows="10"></textarea>
+  </details>
+</div></div>
+
+<!-- ページを追加 -->
+<div class="modal" id="newpage"><div class="box">
+  <button class="btn ghost close" data-close type="button">閉じる</button>
+  <h2>ページを追加</h2>
+  <div class="f"><label for="np-title">ページの題名</label><input type="text" id="np-title" placeholder="例：よくある質問"></div>
+  <div class="f"><label for="np-name">アドレスに使う名前 <small>半角の小文字・数字・ハイフン</small></label><input type="text" id="np-name" placeholder="例：faq" autocomplete="off" spellcheck="false"></div>
+  <p class="muted" id="np-url"></p>
+  <p><button class="btn" id="btn-np-make" type="button">ページを作る</button></p>
+  <p class="muted">作ったページは、1〜2分で開けるようになります。メニューやボタンからのリンクは、自動では付きません。「共通」のメニューや、ボタンのリンクに足してください。</p>
+</div></div>
+<noscript>このページは、JavaScript を使います。</noscript>
+</body>
+</html>
