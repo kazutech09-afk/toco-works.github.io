@@ -77,15 +77,18 @@
   <h2>保存の準備（はじめの1回だけ）</h2>
   <p>このツールからサイトに保存するには、GitHub で「このサイトの中身だけを書きかえてよい」という鍵（トークン）を作り、ここに入れます。鍵は、このブラウザの中にだけ残ります。</p>
   <ol>
-    <li><a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">GitHub の「鍵を作る画面」を開く</a>（ログインを求められたら、GitHub のアカウントでログイン）</li>
-    <li><b>Token name</b>：<code>toco-works-site-editor</code></li>
-    <li><b>Expiration</b>：「Custom」を選び、1年後の日付にする（期限が切れたら、同じ手順で作り直します）</li>
-    <li><b>Resource owner</b>：<code>toco-works</code> を選ぶ</li>
-    <li><b>Repository access</b>：「Only select repositories」→ <code>toco-works.github.io</code> だけを選ぶ</li>
-    <li><b>Permissions</b>：「Repository permissions」の <b>Contents</b> を「Read and write」にする（ほかは変えない）</li>
-    <li>いちばん下の緑の <b>Generate token</b> を押す → 出てきた <code>github_pat_</code> で始まる文字を、コピーする</li>
-    <li>下の欄に貼って、「確かめて、このブラウザに覚えさせる」を押す</li>
+    <li><a id="token-link" class="btn" href="https://github.com/settings/personal-access-tokens/new?name=toco-works-site-editor&amp;target_name=kazutech09-afk&amp;expires_in=365&amp;contents=write" target="_blank" rel="noopener">GitHub の「鍵を作る画面」を開く</a><br>
+      <span class="muted">名前・持ち主・期限・権限は、はじめから入った状態で開きます。ログインを求められたら、GitHub のアカウントでログインします。</span></li>
+    <li><b>さわるのは1か所だけ</b>：「Repository access」の所で <b>Only select repositories</b> を選び、すぐ下に出る「Select repositories」を押して、<code>toco-works.github.io</code> にチェックを入れる</li>
+    <li><b>確かめる</b>：「Permissions」の所に <b>Contents</b> があり、その右が <b>Read and write</b> になっている<br>
+      <span class="muted">なっていないときは、「Add permissions」を押して Contents にチェックを入れ、右の「Access」を「Read and write」に変えます。</span></li>
+    <li>いちばん下の緑の <b>Generate token</b> を押す（確認の窓が出たら、もう一度 Generate token）</li>
+    <li>出てきた <code>github_pat_</code> で始まる文字の右の、コピーのボタンを押す<br>
+      <span class="muted">この文字は、画面を閉じると二度と見られません。閉じる前に、次の手順まで進めます。</span></li>
+    <li>このページに戻り、下の欄に貼って、「確かめて、このブラウザに覚えさせる」を押す</li>
   </ol>
+  <p class="muted"><b>変えないもの</b>：「Resource owner」は <code class="owner-name">kazutech09-afk</code> のままにします。ここを変えると、下の項目が入れかわり、<code>toco-works.github.io</code> を選べなくなります（変えてしまったら、手順1のボタンを押し直します）。</p>
+  <p class="muted">画面の言葉が上の説明とちがうときは、その画面のスクリーンショットを、チャットに貼ってください（鍵の文字が映っている画面は、貼らないでください）。</p>
   <div class="f"><label for="token">鍵（トークン）</label><input type="password" id="token" autocomplete="off" spellcheck="false" placeholder="github_pat_..."></div>
   <p><button class="btn" id="btn-token-save" type="button">確かめて、このブラウザに覚えさせる</button>
      <button class="btn danger" id="btn-token-clear" type="button">このブラウザから鍵を消す</button></p>
@@ -104,7 +107,7 @@
   <p id="manual-what"></p>
   <ol>
     <li><button class="btn" id="btn-copy" type="button">中身をコピーする</button> <span id="copied" class="ok"></span></li>
-    <li><a id="gh" class="btn ghost" target="_blank" rel="noopener">GitHub の編集画面を開く</a></li>
+    <li><a id="gh" class="btn ghost" target="_blank" rel="noopener">GitHub の編集画面を開く</a><br><span class="muted">「Page not found」と出たら、GitHub にログインしていません。右上の「Sign in」からログインして、もう一度このボタンを押します。</span></li>
     <li>GitHub の画面で、文字が並んでいる枠の中を1回クリック → <b>Ctrl＋A</b>（全部選ぶ）→ <b>Ctrl＋V</b>（貼りつけ）<br><span class="muted">iPhone は、枠の中を長押し →「すべてを選択」→「ペースト」</span></li>
     <li>右上の緑のボタン <b>「Commit changes...」</b> → 出てきた窓の緑の <b>「Commit changes」</b></li>
     <li>1〜2分待って、サイトを開いて確かめる</li>

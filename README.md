@@ -1,6 +1,6 @@
 # tocoworks-site：toco-works.com のサイト（4事業共通）
 
-Toco Works の公開ページの元ファイル。GitHub Pages（Organization「toco-works」のリポジトリ `toco-works.github.io`）に置き、独自ドメイン `toco-works.com` で表示する。作成 2026-09-29（sns-business ボード o33）。2026-09-30 に、文章・並び・リンクをオーナーが自分で直せる形に変更（o34）。
+Toco Works の公開ページの元ファイル。GitHub Pages（リポジトリ `kazutech09-afk/toco-works.github.io`。Organization「toco-works」の下ではない）に置き、独自ドメイン `toco-works.com` で表示する。作成 2026-09-29（sns-business ボード o33）。2026-09-30 に、文章・並び・リンクをオーナーが自分で直せる形に変更（o34）。
 
 ## 自分で直すとき（オーナー向け。ブラウザだけ）
 
@@ -17,7 +17,7 @@ Toco Works の公開ページの元ファイル。GitHub Pages（Organization「
 
 ### はじめの1回だけ：保存の準備
 1. **https://toco-works.com/edit/** を開く
-2. 右上の「保存の準備」を押し、出てきた手順のとおりに、GitHub で鍵（トークン）を作って貼る
+2. 右上の「保存の準備」を押し、出てきた手順のとおりに、GitHub で鍵（トークン）を作って貼る（名前・持ち主・期限・権限は、はじめから入った状態で開く。選ぶのは「Only select repositories」→ `toco-works.github.io` だけ。「Resource owner」は変えない）
 3. 「確かめて、このブラウザに覚えさせる」を押す
 
 - 鍵は、チャット・メール・ファイルに書かない。自分のパソコン・スマホだけで使う
@@ -55,7 +55,7 @@ Toco Works の公開ページの元ファイル。GitHub Pages（Organization「
 | `assets/site.js` | `.txt` を読んで画面を組み立てる。ブロックの種類と項目の表（SCHEMA）もここ |
 | `assets/budoux-ja.js` | 文節の切れ目に改行の候補を入れる（BudouX v0.9.3、Apache-2.0） |
 | `assets/site.css` | 見た目 |
-| `edit/`、`assets/edit.js`、`assets/edit.css` | 編集ツール。保存は GitHub の API（`PUT /repos/toco-works/toco-works.github.io/contents/...`）。鍵はブラウザの localStorage にだけ置く |
+| `edit/`、`assets/edit.js`、`assets/edit.css` | 編集ツール。保存は GitHub の API（`PUT /repos/kazutech09-afk/toco-works.github.io/contents/...`。保存先は `assets/edit.js` の頭の OWNER・REPO・BRANCH）。鍵はブラウザの localStorage にだけ置く |
 | `edit/page-template.txt` | 編集ツールが新しいページを作るときの土台 |
 | `index.html`、`<名前>/index.html` | ページの土台。中の文は `.txt` の写し（読み込めないとき・検索用） |
 | `assets/img/` | サイトで使う画像 |
@@ -71,21 +71,24 @@ Toco Works の公開ページの元ファイル。GitHub Pages（Organization「
 - 動作確認：`node tools\pptx\site-test.js <このフォルダ> <出力フォルダ>`（GitHub への保存は、にせの応答で試す）
 - 事業者情報（屋号・住所・電話・メール）の正は `../sns-business/00_strategy/owner_profile.md`
 - 文章のルール：です・ます、断定しない、本名を書かない（運営責任者は「請求があれば開示」）
-- アプリごとのサポート・プライバシーポリシーのページは、まだない。各アプリの公開準備のときに足す（このファイルは公開リポジトリに入るので、公開前のアプリの名前は書かない）
+- アプリごとのページは、2段の URL（`/<アプリの名前>/`・`/<アプリの名前>/support/`・`/privacy/`・`/terms/`）で、各アプリの公開準備のときに足す。`site-bake.js --new` は1段の名前しか作れないので、`<アプリの名前>/<種類>/index.html` の土台は同じ形でチャットで作り、`text/<アプリの名前>-<種類>.txt` と `common.txt` のページ一覧に足す（サイトは URL の `/` を `-` に置き換えて `.txt` を探す）。特商法はアプリごとの欄を `tokushoho.txt` に1ブロックずつ足す
+- 新しいページの `.txt` を上げてもらうときは、上げる直前に `--pull` で取り込み直してから、**新しく作った・Claude が直したファイルだけ**を `text` フォルダの中に上げてもらう（`text` フォルダごとは上げない）
+- このファイルは公開リポジトリに入るので、公開前のアプリの名前は書かない（2026-10-04 追記）
 - 編集ツールの画面の形（左に一覧・真ん中に入力欄・右に下見・上に保存）は、オーナーが使い慣れた別の編集ツールにならった。コード・文言・素材は使っていない
 
 ## 公開の設定（済み。2026-09-29〜30）
-- GitHub：Organization **toco-works**（tocoworks ではない。https://github.com/toco-works ）、リポジトリ `toco-works.github.io`（Public）、Settings → Pages は「Deploy from a branch」・`main`・`/ (root)`、Custom domain `toco-works.com`、Enforce HTTPS
+- GitHub：リポジトリ **`kazutech09-afk/toco-works.github.io`**（Public、ブランチ `main`。2026-09-30 に公開の API で確認）。Organization「toco-works」（https://github.com/toco-works ）は作成済みだが、公開リポジトリは 0 件で、サイトのファイルは入っていない。Settings → Pages は「Deploy from a branch」・`main`・`/ (root)`、Custom domain `toco-works.com`、Enforce HTTPS
 - Cloudflare の DNS（どれもプロキシはオフ＝灰色の雲）：A `@` → `185.199.108.153`／`185.199.109.153`／`185.199.110.153`／`185.199.111.153`、CNAME `www` → `toco-works.github.io`。メール転送の行はそのまま残す
 
 ### ファイルをまとめて上げ直すとき（デザインやしくみを変えたとき。オーナーの作業）
-1. https://github.com/toco-works/toco-works.github.io を開く
+1. https://github.com/kazutech09-afk/toco-works.github.io を開く
 2. 「Add file」→「Upload files」
 3. Claude が伝えたファイル・フォルダを、エクスプローラーからドラッグ＆ドロップ
 4. 下の緑の「Commit changes」
 
 ## 根拠（確認日 2026-09-30）
 - GitHub Docs「GitHub Pages サイトのカスタム ドメインを管理する」 https://docs.github.com/ja/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site （確認日 2026-09-29）
-- GitHub Docs「Managing your personal access tokens」（fine-grained token の作り方。組織が承認を必要とする設定のときは、鍵が pending になる） https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
+- GitHub Docs「Managing your personal access tokens」（fine-grained token の作り方。アドレスに `name`・`target_name`・`expires_in`・`contents=write` を付けると、項目を入れた状態で開ける。リポジトリの選択は、アドレスでは入れられない） https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens
 - GitHub Docs「REST API endpoints for repository contents」（取得は Contents の read、作成・更新は Contents の write） https://docs.github.com/en/rest/repos/contents
-- 未確認：Organization「toco-works」の fine-grained token の承認設定（鍵を作ったあと「pending」と出たら、Organization の Settings → Personal access tokens で承認する）
+- GitHub の公開 API（`/repos/kazutech09-afk/toco-works.github.io`、`/orgs/toco-works`）で、リポジトリの場所とブランチを確認（2026-09-30）。リポジトリが個人アカウントの下なので、鍵の Resource owner は自分のアカウント（Organization の承認は要らない）
+- 未確認：リポジトリに `.nojekyll` が入っていない（ドラッグでは上がらなかった可能性）。今の表示には影響なし

@@ -8,8 +8,26 @@
 (function () {
   'use strict';
   var T = window.Toco, S = T.SCHEMA;
-  var OWNER = 'toco-works', REPO = 'toco-works.github.io', BRANCH = 'main', SITE = 'https://toco-works.com';
-  var API = 'https://api.github.com/repos/' + OWNER + '/' + REPO + '/contents/';
+  /* サイトのファイルが入っている GitHub のリポジトリ（2026-09-30 に公開の API で確認：kazutech09-afk/toco-works.github.io、ブランチ main）。
+     Organization「toco-works」に移した場合にも動くように、開いたときに OWNERS の順で、リポジトリがある場所を探す */
+  var OWNERS = ['kazutech09-afk', 'toco-works'], OWNER = OWNERS[0], REPO = 'toco-works.github.io', BRANCH = 'main', SITE = 'https://toco-works.com';
+  function api() { return 'https://api.github.com/repos/' + OWNER + '/' + REPO + '/contents/'; }
+  function findRepo() {
+    var i = 0;
+    function next() {
+      if (i >= OWNERS.length) return Promise.resolve();
+      var o = OWNERS[i++];
+      return fetch('https://api.github.com/repos/' + o + '/' + REPO, { headers: { 'Accept': 'application/vnd.github+json' } })
+        .then(function (r) { if (r.ok) { OWNER = o; return; } return next(); }, function () { /* 調べられないときは、はじめの候補を使う */ });
+    }
+    return next().then(function () {
+      Array.prototype.forEach.call(document.querySelectorAll('.owner-name'), function (e) { e.textContent = OWNER; });
+      /* 鍵を作る画面を、名前・持ち主・期限・権限（Contents の書きこみ）を入れた状態で開く（GitHub の公式の機能）。リポジトリだけは、画面で選ぶ */
+      var a = $('token-link');
+      if (a) a.href = 'https://github.com/settings/personal-access-tokens/new?name=' + encodeURIComponent('toco-works-site-editor') +
+        '&description=' + encodeURIComponent('toco-works.com editor') + '&target_name=' + encodeURIComponent(OWNER) + '&expires_in=365&contents=write';
+    });
+  }
   var TOKEN_KEY = 'toco-gh-token', DRAFT = 'toco-draft:';
   var $ = function (id) { return document.getElementById(id); };
   var st = { file: null, pages: [], live: {}, blocks: [], head: [], sel: null, ready: false, images: {}, warn: [] };
@@ -153,7 +171,7 @@
   function unb64(s) { return decodeURIComponent(escape(atob(String(s).replace(/\s/g, '')))); }
   function encPath(p) { return p.split('/').map(encodeURIComponent).join('/'); }
   function gh(method, path, body, tk) {
-    return fetch(API + encPath(path) + (method === 'GET' ? '?ref=' + BRANCH + '&t=' + Date.now() : ''), {
+    return fetch(api() + encPath(path) + (method === 'GET' ? '?ref=' + BRANCH + '&t=' + Date.now() : ''), {
       method: method,
       headers: { 'Authorization': 'Bearer ' + (tk || token()), 'Accept': 'application/vnd.github+json' },
       body: body ? JSON.stringify(body) : undefined,
@@ -167,7 +185,7 @@
   }
   function ghError(e) {
     if (e.status === 401) return '鍵（トークン）が正しくないか、期限が切れています。「保存の準備」で、新しい鍵を入れてください';
-    if (e.status === 403 || e.status === 404) return '鍵の権限が足りません。「保存の準備」の手順で、Contents を「Read and write」、対象を toco-works.github.io にした鍵を作り直してください';
+    if (e.status === 403 || e.status === 404) return '鍵の権限が足りません。「保存の準備」の手順で、Resource owner を ' + OWNER + '、対象を ' + REPO + '、Contents を「Read and write」にした鍵を作り直してください';
     if (e.status === 409 || e.status === 422) return '保存が重なりました。少し待って、もう一度「保存して公開する」を押してください';
     return '保存できませんでした（' + (e.message || '通信エラー') + '）。インターネットの接続を確かめて、もう一度お試しください';
   }
@@ -629,7 +647,7 @@
 
   /* ---------- 起動 ---------- */
   function start() {
-    loadLive('common').then(function (c) {
+    findRepo().then(function () { return loadLive('common'); }).then(function (c) {
       st.live.common = c;
       st.pages = readPages(c);
       var d = getDraft('common');
@@ -687,13 +705,26 @@
     $('btn-token-save').addEventListener('click', function () {
       var tk = $('token').value.trim();
       if (!/^(github_pat_|ghp_)[A-Za-z0-9_]{20,}$/.test(tk)) { $('token-state').textContent = '鍵の形が正しくありません。github_pat_ で始まる文字を、全部コピーして貼ってください。'; return; }
-      $('token-state').textContent = '確かめています…';
-      gh('GET', 'text/common.txt', null, tk).then(function () {
+      $('token-state').className = 'muted';
+      $('token-state').textContent = '確かめています…（ためしに、小さなファイルを1つ保存します）';
+      /* 読むだけなら鍵がなくてもできるので、実際に保存できるかを、確認用のファイルで確かめる */
+      var check = 'edit/save-check.txt';
+      gh('GET', check, null, tk).then(function (j) { return j.sha; }, function (e) { if (e.status === 404) return null; throw e; }).then(function (sha) {
+        var body = { message: '編集ツール：保存できるかの確認', content: b64('編集ツールが「保存できるか」を確かめるためのファイルです。消してもかまいません。\n確認した日時：' + new Date().toISOString() + '\n'), branch: BRANCH };
+        if (sha) body.sha = sha;
+        return gh('PUT', check, body, tk);
+      }).then(function () {
         try { localStorage.setItem(TOKEN_KEY, tk); } catch (e) { /* 覚えられないブラウザでは、毎回入れる */ }
         $('token').value = '';
-        $('token-state').textContent = '確かめました。このブラウザに覚えさせました。これからは「保存して公開する」を押すだけで保存できます。';
+        $('token-state').className = 'ok';
+        $('token-state').textContent = '保存できることを確かめました。このブラウザに覚えさせました。これからは「保存して公開する」を押すだけで保存できます。';
         toast('保存の準備ができました');
-      }, function (e) { $('token-state').textContent = ghError(e); });
+      }, function (e) {
+        $('token-state').className = 'ng';
+        $('token-state').textContent = e.status === 403 || e.status === 404
+          ? 'この鍵では、保存できませんでした。鍵を作るときに、①「Only select repositories」で ' + REPO + ' を選んだか、②「Contents」が「Read and write」になっていたか、を確かめて、鍵を作り直してください。'
+          : ghError(e);
+      });
     });
     $('btn-token-clear').addEventListener('click', function () {
       try { localStorage.removeItem(TOKEN_KEY); } catch (e) { /* 何もしない */ }

@@ -107,3 +107,5 @@ code{background:#F3EDE3;border-radius:4px;padding:1px 5px;font-family:Consolas,M
   .grid2,.grid3{grid-template-columns:1fr}
   .modal .box{padding:18px 16px}
 }
+
+.ng{color:var(--red);font-weight:700}
