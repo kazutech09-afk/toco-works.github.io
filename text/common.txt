@@ -26,3 +26,7 @@
 お問い合わせ | /contact/ | contact
 プライバシーポリシー | /privacy/ | privacy
 特定商取引法に基づく表記 | /tokushoho/ | tokushoho
+第二種衛生管理者（アプリ） | /eisei2/ | eisei2
+サポート（衛生管理者アプリ） | /eisei2/support/ | eisei2-support
+プライバシーポリシー（衛生管理者アプリ） | /eisei2/privacy/ | eisei2-privacy
+利用規約（衛生管理者アプリ） | /eisei2/terms/ | eisei2-terms
