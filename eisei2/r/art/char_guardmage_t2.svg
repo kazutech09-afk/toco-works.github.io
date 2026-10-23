@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 256" width="200" height="256">
+  <!-- メイジ・ガーディアン（2段目）「護術士」（DEF＝労働衛生／INT＝労働生理）／素体A・髪B（あご丈・センター分け）。文字は入れない。 -->
+  <!-- 試作 char_guardmage_t1.svg（1段目の飾りの量）を2段目にそろえた版。足したもの：裾の上の六角の文様の帯、両肩の小さな肩当て、胸の灯章、ストールの真鍮の縁 -->
+  <g id="shadow">
+    <ellipse cx="100" cy="246" rx="50" ry="6" fill="#000000" fill-opacity="0.18"/>
+  </g>
+  <g id="hood-back">
+    <path d="M80,72 C80,62 120,62 120,72 L114,80 L86,80 Z" fill="#17524E"/>
+  </g>
+  <g id="hair-back">
+    <path d="M83,50 C80,30 89,21 100,21 C111,21 120,30 117,50 L116,62 L109,60 L91,60 L84,62 Z" fill="#2C2230"/>
+  </g>
+  <g id="body">
+    <rect id="neck" x="94" y="58" width="12" height="14" rx="3" fill="#DDB590"/>
+  </g>
+  <g id="outfit">
+    <path id="robe" d="M77,74 C87,70 113,70 123,74 L124,112 L134,234 L66,234 L76,112 Z" fill="#1F6F6A"/>
+    <path id="robe-shade" d="M113,72 L123,74 L124,112 L134,234 L118,234 Z" fill="#000000" fill-opacity="0.14"/>
+    <path id="robe-hem" d="M67.5,222 L132.5,222 L134,234 L66,234 Z" fill="#17524E"/>
+    <path id="hem-pattern" d="M70,234 L74,226 L78,234 Z M118,234 L122,226 L126,234 Z M126,234 L130,226 L133.6,234 Z M78,234 L82,226 L86,234 Z" fill="#B08D45"/>
+    <path id="inner-robe" d="M95,112 L105,112 L113,234 L87,234 Z" fill="#5B4A9E"/>
+    <path d="M87.6,229 L112.4,229 L113,234 L87,234 Z" fill="#B08D45"/>
+    <path id="hex-band" d="M68.3,204 L131.7,204 L132.6,216 L67.4,216 Z" fill="#17524E"/>
+    <path d="M68.3,204 L131.7,204 M67.4,216 L132.6,216" stroke="#B08D45" stroke-width="1.2"/>
+    <polygon points="72,207.2 74.6,208.7 74.6,211.7 72,213.2 69.4,211.7 69.4,208.7" fill="#B08D45"/>
+    <polygon points="80,207.2 82.6,208.7 82.6,211.7 80,213.2 77.4,211.7 77.4,208.7" fill="#5CC2B6"/>
+    <polygon points="88,207.2 90.6,208.7 90.6,211.7 88,213.2 85.4,211.7 85.4,208.7" fill="#B08D45"/>
+    <polygon points="96,207.2 98.6,208.7 98.6,211.7 96,213.2 93.4,211.7 93.4,208.7" fill="#B4A2F0"/>
+    <polygon points="104,207.2 106.6,208.7 106.6,211.7 104,213.2 101.4,211.7 101.4,208.7" fill="#B08D45"/>
+    <polygon points="112,207.2 114.6,208.7 114.6,211.7 112,213.2 109.4,211.7 109.4,208.7" fill="#5CC2B6"/>
+    <polygon points="120,207.2 122.6,208.7 122.6,211.7 120,213.2 117.4,211.7 117.4,208.7" fill="#B08D45"/>
+    <polygon points="128,207.2 130.6,208.7 130.6,211.7 128,213.2 125.4,211.7 125.4,208.7" fill="#B4A2F0"/>
+    <ellipse cx="90" cy="238" rx="8" ry="4" fill="#2A2420"/>
+    <ellipse cx="110" cy="238" rx="8" ry="4" fill="#2A2420"/>
+    <path id="stole-l" d="M86,74 L93,74 L91,112 L85,112 Z" fill="#5B4A9E"/>
+    <path id="stole-r" d="M107,74 L114,74 L115,112 L109,112 Z" fill="#5B4A9E"/>
+    <path d="M85,112 L91,112 M109,112 L115,112" stroke="#B08D45" stroke-width="1.6"/>
+    <rect id="belt" x="76" y="113" width="48" height="5" fill="#B08D45"/>
+    <circle cx="100" cy="115.5" r="3.5" fill="#8A6A30"/>
+    <path d="M98,119 L96,134 M102,119 L104,132" stroke="#B08D45" stroke-width="1.5" stroke-linecap="round"/>
+    <path id="collar" d="M81,61 L87,75 L113,75 L119,61 L115,59 L107,70 L93,70 L85,59 Z" fill="#17524E"/>
+    <path d="M81,61 L85,59 L93,70 L107,70 L115,59 L119,61" fill="none" stroke="#B08D45" stroke-width="1.2"/>
+    <path id="sleeve-l" d="M77,74 C69,78 65,90 63,104 L56,146 L77,146 L78,104 Z" fill="#1F6F6A"/>
+    <path id="cuff-l" d="M57,141 L76.6,141 L77,146 L56,146 Z" fill="#5B4A9E"/>
+    <path id="sleeve-r" d="M123,74 C131,78 135,90 137,104 L144,146 L123,146 L122,104 Z" fill="#1F6F6A"/>
+    <path id="sleeve-r-shade" d="M128,78 C133,84 136,94 137,104 L144,146 L134,146 Z" fill="#000000" fill-opacity="0.12"/>
+    <path id="cuff-r" d="M123,141 L143.5,141 L144,146 L123,146 Z" fill="#5B4A9E"/>
+  </g>
+  <g id="armor">
+    <path id="pauldron-l" d="M64,90 C63,78 73,71 88,72 L88,81 C79,82 72,86 68,94 Z" fill="#8E98A3"/>
+    <path d="M64,90 C63,78 73,71 88,72" fill="none" stroke="#B08D45" stroke-width="1.6"/>
+    <path id="pauldron-r" d="M136,90 C137,78 127,71 112,72 L112,81 C121,82 128,86 132,94 Z" fill="#7E8893"/>
+    <path d="M136,90 C137,78 127,71 112,72" fill="none" stroke="#B08D45" stroke-width="1.6"/>
+  </g>
+  <g id="emblem">
+    <polygon points="100,86 104.3,88.5 104.3,93.5 100,96 95.7,93.5 95.7,88.5" fill="#2F4F6F" stroke="#B08D45" stroke-width="1.2"/>
+    <ellipse cx="100" cy="89" rx="1.2" ry="2.2" fill="#F0946A"/>
+    <ellipse cx="100" cy="89" rx="1.2" ry="2.2" fill="#5CC2B6" transform="rotate(120 100 91)"/>
+    <ellipse cx="100" cy="89" rx="1.2" ry="2.2" fill="#B4A2F0" transform="rotate(240 100 91)"/>
+  </g>
+  <g id="hand-l">
+    <circle cx="66" cy="150" r="6" fill="#EBC8A2"/>
+  </g>
+  <g id="shield-book">
+    <polygon id="book-pages" points="57,110 76.05,121 76.05,143 57,154 37.95,143 37.95,121" fill="#CFC4A6"/>
+    <polygon id="book-cover" points="60,106 79.05,117 79.05,139 60,150 40.95,139 40.95,117" fill="#1F6F6A" stroke="#B08D45" stroke-width="2"/>
+    <polygon id="book-panel" points="60,113 72.99,120.5 72.99,135.5 60,143 47.01,135.5 47.01,120.5" fill="#E4DAC2"/>
+    <polygon points="60,120 66.93,124 66.93,132 60,136 53.07,132 53.07,124" fill="#2F4F6F" stroke="#B08D45" stroke-width="1.4"/>
+    <ellipse cx="60" cy="125.2" rx="1.8" ry="3.4" fill="#F0946A"/>
+    <ellipse cx="60" cy="125.2" rx="1.8" ry="3.4" fill="#5CC2B6" transform="rotate(120 60 128)"/>
+    <ellipse cx="60" cy="125.2" rx="1.8" ry="3.4" fill="#B4A2F0" transform="rotate(240 60 128)"/>
+    <circle cx="60" cy="109.5" r="1.6" fill="#B08D45"/>
+    <circle cx="60" cy="146.5" r="1.6" fill="#B08D45"/>
+    <rect id="book-clasp" x="77" y="125" width="5" height="6" rx="1" fill="#B08D45"/>
+  </g>
+  <g id="weapon">
+    <rect id="staff" x="134" y="52" width="4" height="188" rx="2" fill="#4A3A2C"/>
+    <rect x="131.5" y="49" width="9" height="4" rx="1" fill="#B08D45"/>
+    <rect x="131.5" y="100" width="9" height="3" rx="1" fill="#B08D45"/>
+    <polygon id="staff-finial" points="136,15 139,23 133,23" fill="#B08D45"/>
+    <polygon id="lantern-frame" points="136,23 147.26,29.5 147.26,42.5 136,49 124.74,42.5 124.74,29.5" fill="#2F4F6F" stroke="#B08D45" stroke-width="2.5"/>
+    <polygon id="lantern-light" points="136,28 142.93,32 142.93,40 136,44 129.07,40 129.07,32" fill="#F3D98B"/>
+    <ellipse cx="136" cy="32.4" rx="2" ry="3.8" fill="#B4532A"/>
+    <ellipse cx="136" cy="32.4" rx="2" ry="3.8" fill="#1F6F6A" transform="rotate(120 136 36)"/>
+    <ellipse cx="136" cy="32.4" rx="2" ry="3.8" fill="#5B4A9E" transform="rotate(240 136 36)"/>
+  </g>
+  <g id="hand-r">
+    <circle cx="136" cy="150" r="6" fill="#EBC8A2"/>
+  </g>
+  <g id="head">
+    <path id="skin-face" d="M85,43 C85,31 91,26 100,26 C109,26 115,31 115,43 C115,55 109,64 100,65 C91,64 85,55 85,43 Z" fill="#EBC8A2"/>
+    <path id="face-shade" d="M108,28 C113,31 115,36 115,43 C115,55 109,64 100,65 C106,58 109,48 108,28 Z" fill="#000000" fill-opacity="0.06"/>
+  </g>
+  <g id="face">
+    <ellipse cx="94" cy="46.5" rx="1.7" ry="2.2" fill="#2A2420"/>
+    <ellipse cx="106" cy="46.5" rx="1.7" ry="2.2" fill="#2A2420"/>
+    <path d="M90.5,41.8 L97,41.2 M103,41.2 L109.5,41.8" stroke="#2C2230" stroke-width="1.3" stroke-linecap="round"/>
+    <path d="M100,48.5 L99,53 L101,53.5" stroke="#C99F7A" stroke-width="1" fill="none" stroke-linecap="round"/>
+    <path d="M97,57.6 Q100,58.6 103,57.6" stroke="#9A5E4A" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+  </g>
+  <g id="hair-front">
+    <path d="M84.5,46 C83,30 90,23 100,23 C110,23 117,30 115.5,46 C113,38 108,31 100,30 C92,31 87,38 84.5,46 Z" fill="#2C2230"/>
+    <path d="M84.5,44 L83.5,58 L87,60 L87,46 Z" fill="#2C2230"/>
+    <path d="M115.5,44 L116.5,58 L113,60 L113,46 Z" fill="#2C2230"/>
+    <path d="M102,25 C107,25 111,27 113,31 C109,28 106,27 102,27 Z" fill="#4A3C50"/>
+  </g>
+</svg>

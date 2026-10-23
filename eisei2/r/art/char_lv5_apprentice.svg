@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 256" width="200" height="256">
+  <!-- 旅慣れた見習い（Lv.5〜）／素体A・髪A。char_lv1_apprentice.svg に3つだけ足した（visual 14-1）。文字は入れない。 -->
+  <!-- 足した物：①背中の短い旅外套 cape（朽葉色・腿の中ほどまで）②肩掛けの裾の刺し縫い capelet-stitch（藍）③肩掛けの前の木の留め具 clasp。真鍮・灯章は使わない（1段目の飾りの先取りをしない） -->
+  <!-- レイヤー順：shadow → cape → hair-back → body → legs → boots → outfit → cloak → accessory → weapon → hands → head → face → hair-front -->
+  <g id="shadow">
+    <ellipse cx="100" cy="246" rx="48" ry="6" fill="#000000" fill-opacity="0.18"/>
+  </g>
+  <g id="cape">
+    <path id="travel-cape" d="M76,76 C88,72 112,72 124,76 L134,120 L140,176 C122,182 78,182 60,176 L66,120 Z" fill="#85704E"/>
+    <path id="travel-cape-shade" d="M118,75 L124,76 L134,120 L140,176 C134,178 127,179.6 120,180.3 L122,120 Z" fill="#000000" fill-opacity="0.16"/>
+    <path id="travel-cape-hem" d="M60.5,172.4 C78,178.2 122,178.2 139.5,172.4 L140,176 C122,182 78,182 60,176 Z" fill="#D3C4A4"/>
+  </g>
+  <g id="hair-back">
+    <path d="M84,50 C82,30 90,22 100,22 C110,22 118,30 116,50 L113,54 L87,54 Z" fill="#3B2A20"/>
+  </g>
+  <g id="body">
+    <rect id="neck" x="94" y="58" width="12" height="14" rx="3" fill="#DDB590"/>
+  </g>
+  <g id="legs">
+    <path d="M87,150 L99,150 L98,214 L88,214 Z" fill="#4A4A52"/>
+    <path d="M101,150 L113,150 L112,214 L102,214 Z" fill="#42424A"/>
+  </g>
+  <g id="boots">
+    <path d="M87,206 L98,206 L98,236 C98,240 96,242 92,242 L81,242 C81,238 84,235 87,233 Z" fill="#5A4030"/>
+    <path d="M102,206 L113,206 L113,233 C116,235 119,238 119,242 L108,242 C104,242 102,240 102,236 Z" fill="#4E3828"/>
+    <rect x="87" y="209" width="11" height="4" fill="#6E5440"/>
+    <rect x="102" y="209" width="11" height="4" fill="#6E5440"/>
+  </g>
+  <g id="outfit">
+    <path id="sleeve-l" d="M77,74 C70,76 66,83 65,93 L63,140 L74,142 L78,102 Z" fill="#5F6B4D"/>
+    <path id="sleeve-r" d="M123,74 C130,76 134,83 135,93 L137,140 L126,142 L122,102 Z" fill="#5F6B4D"/>
+    <path id="tunic" d="M77,74 C87,70 113,70 123,74 L122,112 L127,166 L73,166 L78,112 Z" fill="#6E7B5A"/>
+    <path id="tunic-shade" d="M112,72 L123,74 L122,112 L127,166 L114,166 Z" fill="#000000" fill-opacity="0.12"/>
+    <path d="M100,142 L100,166" stroke="#56613F" stroke-width="1.5"/>
+    <rect id="belt" x="78" y="120" width="44" height="7" fill="#5A4030"/>
+    <polygon id="buckle" points="100,119.5 103.5,121.5 103.5,125.5 100,127.5 96.5,125.5 96.5,121.5" fill="#B08D45"/>
+    <rect id="cuff-l" x="63" y="134" width="11" height="6" fill="#D3C4A4"/>
+    <rect id="cuff-r" x="126" y="134" width="11" height="6" fill="#D3C4A4"/>
+  </g>
+  <g id="cloak">
+    <path id="hood-back" d="M85,70 C88,61 112,61 115,70 C108,75 92,75 85,70 Z" fill="#BFAE8C"/>
+    <path id="capelet" d="M69,82 C76,69 124,69 131,82 L129,101 C118,107 82,107 71,101 Z" fill="#D3C4A4"/>
+    <path d="M100,73 L100,105" stroke="#BFAE8C" stroke-width="1.2"/>
+    <path id="capelet-shade" d="M112,71 C122,72 129,76 131,82 L129,101 C124,103 118,104 113,105 Z" fill="#000000" fill-opacity="0.08"/>
+    <path id="capelet-stitch" d="M73.5,98.7 L77.5,99.8 M80.5,100.5 L84.5,101.2 M87.5,101.7 L91.5,102.1 M94.5,102.3 L98.5,102.5 M101.5,102.5 L105.5,102.3 M108.5,102.1 L112.5,101.7 M115.5,101.2 L119.5,100.5 M122.5,99.8 L126.5,98.7" stroke="#2F4F6F" stroke-width="1.1" stroke-linecap="round"/>
+    <path id="scarf" d="M88,65 C95,71 105,71 112,65 L113,73 C106,79 94,79 87,73 Z" fill="#2F4F6F"/>
+    <path id="scarf-tail" d="M103,75 L111,98 L105,97 L99,77 Z" fill="#264260"/>
+    <rect id="clasp-strap-l" x="90.5" y="85.6" width="6" height="1.8" rx="0.6" fill="#5A4030"/>
+    <rect id="clasp-strap-r" x="103.5" y="85.6" width="6" height="1.8" rx="0.6" fill="#5A4030"/>
+    <rect id="clasp" x="95.5" y="84.8" width="9" height="3.4" rx="1.7" fill="#8A6A48"/>
+    <path d="M97.2,85.4 L97.2,87.6 M102.8,85.4 L102.8,87.6" stroke="#6E5440" stroke-width="0.8"/>
+  </g>
+  <g id="accessory">
+    <path id="strap" d="M80,79 L85,76 L125,134 L120,137 Z" fill="#5A4030"/>
+    <rect id="book" x="115" y="125" width="13" height="6" rx="1" fill="#2F4F6F"/>
+    <rect id="bag" x="112" y="130" width="21" height="18" rx="3" fill="#7A5A3E"/>
+    <path id="bag-flap" d="M112,133 L133,133 L133,139 C126,142 119,142 112,139 Z" fill="#6A4C33"/>
+    <circle cx="122.5" cy="139.5" r="1.6" fill="#B08D45"/>
+  </g>
+  <g id="weapon">
+    <rect id="staff" x="134" y="44" width="4" height="198" rx="2" fill="#8A6A48"/>
+    <path id="staff-hook" d="M136,46 C136,34 147,31 149,40" stroke="#8A6A48" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M149,40 L149,44" stroke="#6E5440" stroke-width="1.2"/>
+    <polygon id="lantern" points="149,44 154,47 154,55 149,58 144,55 144,47" fill="#B08D45"/>
+    <polygon id="lantern-light" points="149,47.5 151.5,49 151.5,53 149,54.5 146.5,53 146.5,49" fill="#F3D98B"/>
+  </g>
+  <g id="hands">
+    <circle cx="68.5" cy="147" r="6" fill="#EBC8A2"/>
+    <circle cx="133" cy="147" r="6" fill="#EBC8A2"/>
+  </g>
+  <g id="head">
+    <ellipse cx="84.5" cy="46" rx="2.6" ry="4.2" fill="#E2BC97"/>
+    <ellipse cx="115.5" cy="46" rx="2.6" ry="4.2" fill="#E2BC97"/>
+    <path id="skin-face" d="M85,43 C85,31 91,26 100,26 C109,26 115,31 115,43 C115,55 109,64 100,65 C91,64 85,55 85,43 Z" fill="#EBC8A2"/>
+    <path id="face-shade" d="M108,28 C113,31 115,36 115,43 C115,55 109,64 100,65 C106,58 109,48 108,28 Z" fill="#000000" fill-opacity="0.06"/>
+  </g>
+  <g id="face">
+    <ellipse cx="94" cy="46" rx="1.7" ry="2.3" fill="#2A2420"/>
+    <ellipse cx="106" cy="46" rx="1.7" ry="2.3" fill="#2A2420"/>
+    <path d="M90.5,41.5 L97,40.8 M103,40.8 L109.5,41.5" stroke="#3A2E26" stroke-width="1.4" stroke-linecap="round"/>
+    <path d="M100,48 L99,53 L101,53.5" stroke="#C99F7A" stroke-width="1" fill="none" stroke-linecap="round"/>
+    <path d="M96.5,57.5 Q100,58.8 103.5,57.5" stroke="#9A5E4A" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+  </g>
+  <g id="hair-front">
+    <path d="M84.5,44 C83,30 90,23 100,23 C111,23 117,30 115.5,44 C114,38 112,35 109,33 C103,37 95,38 88,37 C86.5,39 85.5,41 84.5,44 Z" fill="#3B2A20"/>
+    <path d="M89,36 C95,36 101,33 106,29 C104,34 99,37.5 92,38.5 Z" fill="#3B2A20"/>
+    <path d="M95,26 C100,24 106,25 109,28 C104,27 99,27 95,28 Z" fill="#5A4130"/>
+  </g>
+</svg>

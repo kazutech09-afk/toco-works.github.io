@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 256" width="200" height="256">
+  <!-- メイジ系2段目「脈理の賢者」（INT＝労働生理の上位）／素体A・髪C（低い一つ結び）灰銀。文字は入れない。 -->
+  <!-- 1段目からの足し算：生成りの長い上衣（第2の色）、裾と前身ごろの脈の文様の帯（赤と青の波線）、真鍮の喉当て（部分的な鎧）、三重の輪の灯杖、体のまわりの二重の輪、浮かぶ図譜（からだの図＝同心円と縦の線） -->
+  <g id="shadow">
+    <ellipse cx="100" cy="246" rx="48" ry="6" fill="#000000" fill-opacity="0.18"/>
+  </g>
+  <g id="ring-back">
+    <path d="M50,132 A50,10 0 0 1 150,132" stroke="#B4A2F0" stroke-width="2.2" fill="none" stroke-opacity="0.7"/>
+    <path d="M42,132 A58,13 0 0 1 158,132" stroke="#8C7BC9" stroke-width="1.5" fill="none" stroke-opacity="0.6"/>
+  </g>
+  <g id="hood-back">
+    <path d="M80,72 C80,62 120,62 120,72 L114,80 L86,80 Z" fill="#3E3270"/>
+  </g>
+  <g id="hair-back">
+    <path d="M84,50 C82,30 90,22 100,22 C110,22 118,30 116,50 L113,54 L87,54 Z" fill="#8C8A86"/>
+    <path id="hair-tail" d="M107,56 C119,62 121,82 113,100 C111,86 107,72 103,62 Z" fill="#8C8A86"/>
+    <polygon id="hair-tie" points="106,60 112,62 111,66 105,64" fill="#B08D45"/>
+  </g>
+  <g id="body">
+    <rect id="neck" x="94" y="58" width="12" height="14" rx="3" fill="#DDB590"/>
+  </g>
+  <g id="outfit">
+    <ellipse cx="91" cy="239" rx="7" ry="3.5" fill="#2A2420"/>
+    <ellipse cx="109" cy="239" rx="7" ry="3.5" fill="#2A2420"/>
+    <path id="robe" d="M78,74 C88,70 112,70 122,74 L123,112 L129,236 L71,236 L77,112 Z" fill="#5B4A9E"/>
+    <path id="robe-front" d="M96,76 L104,76 L108,236 L92,236 Z" fill="#3E3270"/>
+    <path id="overrobe-l" d="M78,74 C83,72 88,71 92,71 L93,112 L86,236 L71,236 L77,112 Z" fill="#E4DAC2"/>
+    <path id="overrobe-r" d="M122,74 C117,72 112,71 108,71 L107,112 L114,236 L129,236 L123,112 Z" fill="#E4DAC2"/>
+    <path id="overrobe-shade" d="M113,72 L122,74 L123,112 L129,236 L118,236 Z" fill="#000000" fill-opacity="0.14"/>
+    <path id="pulse-band" d="M71.4,212 L128.6,212 L129,228 L71,228 Z" fill="#5B4A9E"/>
+    <path id="pulse-red" d="M73,216 L79,216 L81,213 L84,219 L86,216 L98,216 L100,213 L103,219 L105,216 L117,216 L119,213 L122,219 L124,216 L127,216" stroke="#E58A97" stroke-width="1.4" fill="none" stroke-linejoin="round"/>
+    <path id="pulse-blue" d="M73,224 Q77,221 81,224 T89,224 T97,224 T105,224 T113,224 T121,224 T127,224" stroke="#7DB6E8" stroke-width="1.4" fill="none"/>
+    <path id="front-pulse" d="M100,120 L100,140 L97.5,143 L102.5,149 L100,152 L100,200" stroke="#E58A97" stroke-width="1.3" fill="none" stroke-linejoin="round"/>
+    <path id="robe-hem" d="M71.2,232 L128.8,232 L129,236 L71,236 Z" fill="#B08D45"/>
+    <rect id="belt" x="77" y="112" width="46" height="5" fill="#3E3270"/>
+    <rect x="77" y="112" width="46" height="1.2" fill="#B08D45"/>
+    <path id="sleeve-l" d="M78,74 C71,78 66,90 64,104 L58,146 L76,146 L77,104 Z" fill="#E4DAC2"/>
+    <path id="cuff-l" d="M58.7,141 L76.3,141 L76,146 L58,146 Z" fill="#5B4A9E"/>
+    <path id="sleeve-r" d="M122,74 C129,78 134,90 136,104 L142,146 L124,146 L123,104 Z" fill="#E4DAC2"/>
+    <path id="sleeve-r-shade" d="M127,78 C132,85 135,94 136,104 L142,146 L133,146 Z" fill="#000000" fill-opacity="0.12"/>
+    <path id="cuff-r" d="M124,141 L141.3,141 L142,146 L124,146 Z" fill="#5B4A9E"/>
+  </g>
+  <g id="armor">
+    <path id="gorget" d="M84,68 C91,75 109,75 116,68 L118,79 C109,86 91,86 82,79 Z" fill="#B08D45"/>
+    <path d="M82,79 C91,86 109,86 118,79" fill="none" stroke="#8A6414" stroke-width="1.2"/>
+  </g>
+  <g id="emblem">
+    <polygon points="100,90 105.2,93 105.2,99 100,102 94.8,99 94.8,93" fill="#2F4F6F" stroke="#B08D45" stroke-width="1.4"/>
+    <ellipse cx="100" cy="93.6" rx="1.4" ry="2.6" fill="#F0946A"/>
+    <ellipse cx="100" cy="93.6" rx="1.4" ry="2.6" fill="#5CC2B6" transform="rotate(120 100 96)"/>
+    <ellipse cx="100" cy="93.6" rx="1.4" ry="2.6" fill="#B4A2F0" transform="rotate(240 100 96)"/>
+  </g>
+  <g id="chart">
+    <rect x="38" y="84" width="22" height="28" rx="1.5" fill="#F3ECD9"/>
+    <circle cx="49" cy="96" r="7" fill="none" stroke="#9B3B4A" stroke-width="1.2"/>
+    <circle cx="49" cy="96" r="3.6" fill="none" stroke="#2C6A9A" stroke-width="1.2"/>
+    <path d="M49,88 L49,108" stroke="#5B4A9E" stroke-width="1"/>
+    <path id="chart-sparkle" d="M49,76 L50.2,79 L49,82 L47.8,79 Z M34,92 L35,94 L34,96 L33,94 Z" fill="#E9C46A"/>
+  </g>
+  <g id="weapon">
+    <rect id="staff" x="134" y="34" width="4" height="206" rx="2" fill="#3A2E26"/>
+    <rect x="131.5" y="32" width="9" height="3" rx="1" fill="#B08D45"/>
+    <rect x="131.5" y="96" width="9" height="3" rx="1" fill="#B08D45"/>
+    <circle id="staff-ring-outer" cx="136" cy="18" r="14" fill="none" stroke="#B08D45" stroke-width="2.2"/>
+    <circle id="staff-ring-mid" cx="136" cy="18" r="9.5" fill="none" stroke="#B4A2F0" stroke-width="1.6"/>
+    <circle id="staff-light" cx="136" cy="18" r="5.5" fill="#F3D98B"/>
+    <circle cx="134" cy="18" r="1.8" fill="#9B3B4A"/>
+    <circle cx="138" cy="18" r="1.8" fill="#2C6A9A"/>
+  </g>
+  <g id="hands">
+    <circle cx="67" cy="150" r="6" fill="#EBC8A2"/>
+    <circle cx="136" cy="150" r="6" fill="#EBC8A2"/>
+  </g>
+  <g id="ring-front">
+    <path d="M50,132 A50,10 0 0 0 150,132" stroke="#B4A2F0" stroke-width="2.2" fill="none" stroke-opacity="0.85"/>
+    <path d="M42,132 A58,13 0 0 0 158,132" stroke="#8C7BC9" stroke-width="1.5" fill="none" stroke-opacity="0.75"/>
+  </g>
+  <g id="head">
+    <ellipse cx="84.5" cy="46" rx="2.6" ry="4.2" fill="#E2BC97"/>
+    <ellipse cx="115.5" cy="46" rx="2.6" ry="4.2" fill="#E2BC97"/>
+    <path id="skin-face" d="M85,43 C85,31 91,26 100,26 C109,26 115,31 115,43 C115,55 109,64 100,65 C91,64 85,55 85,43 Z" fill="#EBC8A2"/>
+    <path id="face-shade" d="M108,28 C113,31 115,36 115,43 C115,55 109,64 100,65 C106,58 109,48 108,28 Z" fill="#000000" fill-opacity="0.06"/>
+  </g>
+  <g id="face">
+    <ellipse cx="94" cy="46.4" rx="1.8" ry="1.9" fill="#2A2420"/>
+    <ellipse cx="106" cy="46.4" rx="1.8" ry="1.9" fill="#2A2420"/>
+    <path d="M90.5,41.8 L97,41 M103,41 L109.5,41.8" stroke="#6E6C68" stroke-width="1.4" stroke-linecap="round"/>
+    <path d="M100,48 L99,53 L101,53.5" stroke="#C99F7A" stroke-width="1" fill="none" stroke-linecap="round"/>
+    <path d="M96.8,57.4 Q100,58.4 103.2,57.4" stroke="#9A5E4A" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+  </g>
+  <g id="hair-front">
+    <path d="M84.5,44 C83,30 90,23 100,23 C111,23 117,30 115.5,44 C114,38 112,35 109,33 C103,36 95,37 88,36 C86.5,39 85.5,41 84.5,44 Z" fill="#8C8A86"/>
+    <path d="M115,40 C117.5,48 116.5,55 113,60 L113,46 Z" fill="#8C8A86"/>
+    <path d="M94,26 C100,24 106,25 109,28 C104,27 99,27 94,28 Z" fill="#A9A7A2"/>
+  </g>
+</svg>

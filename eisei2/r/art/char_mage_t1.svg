@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 256" width="200" height="256">
+  <!-- メイジ系1段目「理術士」（INT＝労働生理）／素体A・髪B（あご丈・センター分け）焦げ茶。文字は入れない。 -->
+  <!-- 特徴：縦に細長い菫のローブ（前は生成り）、背の高い灯杖（頭は同心円の輪）、体のまわりの二重の輪（血の巡り）。輪は後ろ半分と前半分に分けてある -->
+  <g id="shadow">
+    <ellipse cx="100" cy="246" rx="44" ry="6" fill="#000000" fill-opacity="0.18"/>
+  </g>
+  <g id="ring-back">
+    <path d="M52,132 A48,10 0 0 1 148,132" stroke="#B4A2F0" stroke-width="2" fill="none" stroke-opacity="0.7"/>
+    <path d="M44,132 A56,13 0 0 1 156,132" stroke="#8C7BC9" stroke-width="1.4" fill="none" stroke-opacity="0.6"/>
+  </g>
+  <g id="hood-back">
+    <path d="M80,72 C80,62 120,62 120,72 L114,80 L86,80 Z" fill="#3E3270"/>
+  </g>
+  <g id="hair-back">
+    <path d="M83,50 C80,30 89,21 100,21 C111,21 120,30 117,50 L116,62 L109,60 L91,60 L84,62 Z" fill="#3B2A20"/>
+  </g>
+  <g id="body">
+    <rect id="neck" x="94" y="58" width="12" height="14" rx="3" fill="#DDB590"/>
+  </g>
+  <g id="outfit">
+    <ellipse cx="91" cy="239" rx="7" ry="3.5" fill="#2A2420"/>
+    <ellipse cx="109" cy="239" rx="7" ry="3.5" fill="#2A2420"/>
+    <path id="robe" d="M78,74 C88,70 112,70 122,74 L123,112 L128,236 L72,236 L77,112 Z" fill="#5B4A9E"/>
+    <path id="robe-shade" d="M113,72 L122,74 L123,112 L128,236 L116,236 Z" fill="#000000" fill-opacity="0.16"/>
+    <path id="robe-front" d="M96,76 L104,76 L108,236 L92,236 Z" fill="#E4DAC2"/>
+    <path id="robe-hem" d="M72.3,231 L127.7,231 L128,236 L72,236 Z" fill="#B08D45"/>
+    <rect id="belt" x="77" y="112" width="46" height="5" fill="#3E3270"/>
+    <path id="collar" d="M86,61 L88,76 L112,76 L114,61 L108,67 L92,67 Z" fill="#4A3C86"/>
+    <path id="sleeve-l" d="M78,74 C71,78 67,90 65,104 L60,144 L76,144 L77,104 Z" fill="#5B4A9E"/>
+    <path id="cuff-l" d="M60.6,139 L76.3,139 L76,144 L60,144 Z" fill="#E4DAC2"/>
+    <path id="sleeve-r" d="M122,74 C129,78 133,90 135,104 L140,144 L124,144 L123,104 Z" fill="#5B4A9E"/>
+    <path id="sleeve-r-shade" d="M127,78 C131,85 134,94 135,104 L140,144 L132,144 Z" fill="#000000" fill-opacity="0.14"/>
+    <path id="cuff-r" d="M124,139 L139.4,139 L140,144 L124,144 Z" fill="#E4DAC2"/>
+  </g>
+  <g id="emblem">
+    <polygon points="100,84 104.3,86.5 104.3,91.5 100,94 95.7,91.5 95.7,86.5" fill="#2F4F6F" stroke="#B08D45" stroke-width="1.2"/>
+    <ellipse cx="100" cy="87" rx="1.2" ry="2.2" fill="#F0946A"/>
+    <ellipse cx="100" cy="87" rx="1.2" ry="2.2" fill="#5CC2B6" transform="rotate(120 100 89)"/>
+    <ellipse cx="100" cy="87" rx="1.2" ry="2.2" fill="#B4A2F0" transform="rotate(240 100 89)"/>
+  </g>
+  <g id="accessory">
+    <path id="chart-strap" d="M84,117 L86,117 L86,124 L84,124 Z" fill="#3E3270"/>
+    <rect id="chart" x="79" y="123" width="12" height="15" rx="1" fill="#E4DAC2"/>
+    <circle cx="85" cy="130.5" r="3.6" fill="none" stroke="#9B3B4A" stroke-width="1"/>
+    <circle cx="85" cy="130.5" r="1.6" fill="#2C6A9A"/>
+  </g>
+  <g id="weapon">
+    <rect id="staff" x="134" y="32" width="4" height="208" rx="2" fill="#4A3A2C"/>
+    <rect x="131.5" y="30" width="9" height="3" rx="1" fill="#B08D45"/>
+    <circle id="staff-ring" cx="136" cy="19" r="11" fill="none" stroke="#B08D45" stroke-width="2.5"/>
+    <circle id="staff-light" cx="136" cy="19" r="6" fill="#F3D98B"/>
+    <circle cx="136" cy="19" r="2.2" fill="#5B4A9E"/>
+  </g>
+  <g id="hands">
+    <circle cx="68" cy="148" r="6" fill="#EBC8A2"/>
+    <circle cx="136" cy="148" r="6" fill="#EBC8A2"/>
+  </g>
+  <g id="ring-front">
+    <path d="M52,132 A48,10 0 0 0 148,132" stroke="#B4A2F0" stroke-width="2" fill="none" stroke-opacity="0.85"/>
+    <path d="M44,132 A56,13 0 0 0 156,132" stroke="#8C7BC9" stroke-width="1.4" fill="none" stroke-opacity="0.75"/>
+  </g>
+  <g id="head">
+    <path id="skin-face" d="M85,43 C85,31 91,26 100,26 C109,26 115,31 115,43 C115,55 109,64 100,65 C91,64 85,55 85,43 Z" fill="#EBC8A2"/>
+    <path id="face-shade" d="M108,28 C113,31 115,36 115,43 C115,55 109,64 100,65 C106,58 109,48 108,28 Z" fill="#000000" fill-opacity="0.06"/>
+  </g>
+  <g id="face">
+    <ellipse cx="94" cy="46.5" rx="1.7" ry="2.2" fill="#2A2420"/>
+    <ellipse cx="106" cy="46.5" rx="1.7" ry="2.2" fill="#2A2420"/>
+    <path d="M90.5,41.8 L97,41.2 M103,41.2 L109.5,41.8" stroke="#3A2E26" stroke-width="1.3" stroke-linecap="round"/>
+    <path d="M100,48.5 L99,53 L101,53.5" stroke="#C99F7A" stroke-width="1" fill="none" stroke-linecap="round"/>
+    <path d="M97,57.6 Q100,58.6 103,57.6" stroke="#9A5E4A" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+  </g>
+  <g id="hair-front">
+    <path d="M84.5,46 C83,30 90,23 100,23 C110,23 117,30 115.5,46 C113,38 108,31 100,30 C92,31 87,38 84.5,46 Z" fill="#3B2A20"/>
+    <path d="M84.5,44 L83.5,58 L87,60 L87,46 Z" fill="#3B2A20"/>
+    <path d="M115.5,44 L116.5,58 L113,60 L113,46 Z" fill="#3B2A20"/>
+    <path d="M102,25 C107,25 111,27 113,31 C109,28 106,27 102,27 Z" fill="#5A4130"/>
+  </g>
+</svg>

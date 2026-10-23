@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- 雑魚「こむら石」（生理の大陸：P3・P6・P7）。縦の縞（筋の束）が両脇に入った丸石。腕なし・大きく笑う口なし。眉を少し寄せて「こわばり」。文字は入れない。 -->
+  <!-- 色違い：body の石の色と stripes の色を単元の色に替える -->
+  <g id="shadow">
+    <ellipse cx="100" cy="162" rx="48" ry="7" fill="#000000" fill-opacity="0.16"/>
+  </g>
+  <g id="feet">
+    <ellipse cx="82" cy="156" rx="11" ry="5.5" fill="#6E665E"/>
+    <ellipse cx="118" cy="156" rx="11" ry="5.5" fill="#625A53"/>
+  </g>
+  <g id="body">
+    <ellipse cx="100" cy="116" rx="46" ry="40" fill="#8C8278"/>
+    <ellipse cx="86" cy="92" rx="18" ry="10" fill="#A39A90"/>
+    <path id="body-shade" d="M58,130 C64,146 80,156 100,156 C120,156 136,146 142,130 C130,142 116,148 100,148 C84,148 70,142 58,130 Z" fill="#000000" fill-opacity="0.14"/>
+  </g>
+  <g id="stripes">
+    <path d="M68,88 C59,106 60,128 70,146 M80,80 C71,100 71,128 80,151 M132,88 C141,106 140,128 130,146 M120,80 C129,100 129,128 120,151" stroke="#73695F" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+  <g id="face">
+    <path id="eye-l" d="M86,112 Q91,116.5 96,112 Z" fill="#231E1A"/>
+    <path id="eye-r" d="M104,112 Q109,116.5 114,112 Z" fill="#231E1A"/>
+    <path d="M85,106 L96,109 M115,106 L104,109" stroke="#4A433C" stroke-width="2" stroke-linecap="round"/>
+    <path id="mouth" d="M96,126 L104,126" stroke="#3A332D" stroke-width="2" stroke-linecap="round"/>
+  </g>
+</svg>

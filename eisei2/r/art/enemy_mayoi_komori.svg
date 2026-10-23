@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- 雑魚「迷い書類こうもり」（法の大陸：L1・L3・L4）。書類を折った翼のこうもり。片方の翼にクリップ、もう片方に行だけの罫（文字なし）。文字は入れない。 -->
+  <!-- 色違い：wing の地の色と clip の色を単元の色に替える。体の中心（100,112）まわりはサビの膜が重なる範囲 -->
+  <g id="shadow">
+    <ellipse cx="100" cy="182" rx="40" ry="6" fill="#000000" fill-opacity="0.14"/>
+  </g>
+  <g id="wing-l">
+    <polygon points="90,92 30,70 40,96 24,110 48,118 40,134 88,124" fill="#EDE4CC"/>
+    <polygon points="90,104 40,96 24,110" fill="#D6CBAE"/>
+    <polygon points="88,118 48,118 40,134" fill="#D6CBAE"/>
+    <path id="clip" d="M52,80 L52,93 C52,97 58,97 58,93 L58,82 C58,79 55,79 55,82 L55,90" stroke="#B08D45" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+  </g>
+  <g id="wing-r">
+    <polygon points="110,92 170,70 160,96 176,110 152,118 160,134 112,124" fill="#E4DAC2"/>
+    <polygon points="110,104 160,96 176,110" fill="#CFC4A6"/>
+    <polygon points="112,118 152,118 160,134" fill="#CFC4A6"/>
+    <path id="ruled-lines" d="M118,96 L152,84 M120,103 L158,94 M122,110 L150,104" stroke="#B9AE92" stroke-width="1.2"/>
+  </g>
+  <g id="body">
+    <polygon points="88,86 86,66 97,79" fill="#E4DAC2"/>
+    <polygon points="112,86 114,66 103,79" fill="#D6CBAE"/>
+    <polygon points="100,76 117,94 113,130 100,138 87,130 83,94" fill="#F3ECD9"/>
+    <polygon points="100,76 117,94 113,130 100,138" fill="#000000" fill-opacity="0.07"/>
+    <path d="M100,76 L100,138" stroke="#D6CBAE" stroke-width="1"/>
+    <path d="M94,138 L92,146 M106,138 L108,146" stroke="#8A7E64" stroke-width="2" stroke-linecap="round"/>
+  </g>
+  <g id="face">
+    <path id="eye-l" d="M88,101 Q92.5,106 97,101 Z" fill="#2C2836"/>
+    <path id="eye-r" d="M103,101 Q107.5,106 112,101 Z" fill="#2C2836"/>
+    <path d="M87,98 L97,99 M103,99 L113,98" stroke="#8A7E64" stroke-width="1.6" stroke-linecap="round"/>
+    <ellipse id="mouth" cx="100" cy="113" rx="2.2" ry="1.4" fill="#3A3546"/>
+  </g>
+</svg>

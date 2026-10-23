@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240">
+  <!-- ボス「拍樹（はくじゅ）」（労働生理・循環器と血液）。幹の中に四つの部屋の心臓、枝は血管（左＝静脈血の青、右と大動脈の弓＝動脈血の赤）。文字は入れない。 -->
+  <!-- レイヤー：shadow → roots → branches-vein → branches-artery → aorta → tips → lungs → trunk → core → face → pulse -->
+  <!-- 2026-10-22 追加：P1 の「呼吸器」の手がかりとして、内側の枝先に左右一対の肺の形の葉（lungs）を足した（生理・樹木型） -->
+  <g id="shadow">
+    <ellipse cx="120" cy="226" rx="82" ry="9" fill="#000000" fill-opacity="0.18"/>
+  </g>
+  <g id="roots">
+    <path d="M100,200 C80,210 60,214 40,222 L46,227 C66,221 86,219 104,212 Z" fill="#5A3E2E"/>
+    <path d="M140,200 C160,210 180,214 200,222 L194,227 C174,221 154,219 136,212 Z" fill="#4E3527"/>
+    <path d="M114,206 C112,214 108,220 102,226 L112,227 C116,221 119,214 120,208 Z" fill="#5A3E2E"/>
+    <path d="M126,206 C128,214 132,220 138,226 L128,227 C124,221 121,214 120,208 Z" fill="#4E3527"/>
+  </g>
+  <g id="branches-vein">
+    <path d="M110,120 C100,100 84,90 66,84 M66,84 C56,80 48,70 44,58 M66,84 C58,92 46,96 34,96 M100,104 C96,84 92,66 94,48" stroke="#3F6FA8" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M44,58 C40,52 36,50 30,50 M44,58 C44,50 48,44 52,42 M34,96 C28,100 24,104 22,110 M94,48 C90,42 86,40 80,40" stroke="#5B86BD" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </g>
+  <g id="branches-artery">
+    <path d="M130,120 C140,100 156,90 174,84 M174,84 C184,80 192,70 196,58 M174,84 C182,92 194,96 206,96 M140,104 C144,84 148,66 146,48" stroke="#B8434B" stroke-width="6" fill="none" stroke-linecap="round"/>
+    <path d="M196,58 C200,52 204,50 210,50 M196,58 C196,50 192,44 188,42 M206,96 C212,100 216,104 218,110 M146,48 C150,42 154,40 160,40" stroke="#D0646B" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </g>
+  <g id="aorta">
+    <path d="M108,116 C104,70 112,44 120,40 C128,44 136,70 132,116" stroke="#B8434B" stroke-width="8" fill="none" stroke-linecap="round"/>
+  </g>
+  <g id="tips">
+    <circle cx="44" cy="58" r="7" fill="#7FA3D1"/>
+    <circle cx="34" cy="96" r="6" fill="#7FA3D1"/>
+    <circle cx="94" cy="48" r="7" fill="#7FA3D1"/>
+    <circle cx="196" cy="58" r="7" fill="#E07A80"/>
+    <circle cx="206" cy="96" r="6" fill="#E07A80"/>
+    <circle cx="146" cy="48" r="7" fill="#E07A80"/>
+    <circle cx="120" cy="38" r="8" fill="#E07A80"/>
+  </g>
+  <g id="lungs">
+    <path d="M98,34 C88,32 80,44 80,58 C80,66 86,68 92,64 C96,60 98,52 98,44 Z" fill="#D9898F"/>
+    <path d="M142,34 C152,32 160,44 160,58 C160,66 154,68 148,64 C144,60 142,52 142,44 Z" fill="#CC7D84"/>
+    <path d="M96,40 C92,44 88,48 84,52 M144,40 C148,44 152,48 156,52" stroke="#B8676E" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+  </g>
+  <g id="trunk">
+    <path d="M96,210 C100,170 92,140 84,118 C86,108 92,99 101,94 L139,94 C148,99 154,108 156,118 C148,140 140,170 144,210 Z" fill="#6B4A38"/>
+    <path id="trunk-shade" d="M128,94 L139,94 C148,99 154,108 156,118 C148,140 140,170 144,210 L130,210 C134,170 136,140 128,118 Z" fill="#000000" fill-opacity="0.15"/>
+    <path d="M100,192 C104,182 102,172 98,164 M140,190 C136,180 138,172 142,162 M110,200 L112,190" stroke="#57392A" stroke-width="2" fill="none" stroke-linecap="round"/>
+  </g>
+  <g id="core">
+    <path id="core-socket" d="M120,124 C136,124 148,134 148,150 C148,168 132,180 120,188 C108,180 92,168 92,150 C92,134 104,124 120,124 Z" fill="#3A2620"/>
+    <ellipse id="atrium-r" cx="108" cy="140" rx="9" ry="8" fill="#5B86BD"/>
+    <path id="ventricle-r" d="M98,154 L118,152 L118,176 C110,172 102,164 98,154 Z" fill="#3F6FA8"/>
+    <ellipse id="atrium-l" cx="132" cy="140" rx="9" ry="8" fill="#D0646B"/>
+    <path id="ventricle-l" d="M122,152 L142,154 C138,164 130,172 122,176 Z" fill="#B8434B"/>
+    <rect id="septum" x="118.5" y="132" width="3" height="44" fill="#3A2620"/>
+    <path id="core-ring" d="M120,124 C136,124 148,134 148,150 C148,168 132,180 120,188 C108,180 92,168 92,150 C92,134 104,124 120,124 Z" fill="none" stroke="#E9B65C" stroke-width="2"/>
+  </g>
+  <g id="face">
+    <path d="M94,103 L114,107 M146,103 L126,107" stroke="#4A3226" stroke-width="3.5" stroke-linecap="round"/>
+    <ellipse cx="106" cy="111" rx="7" ry="2.6" fill="#F2C46B"/>
+    <ellipse cx="134" cy="111" rx="7" ry="2.6" fill="#F2C46B"/>
+  </g>
+  <g id="pulse">
+    <circle cx="120" cy="156" r="44" fill="none" stroke="#E9B65C" stroke-width="1.5" stroke-opacity="0.45"/>
+    <circle cx="120" cy="156" r="54" fill="none" stroke="#E9B65C" stroke-width="1" stroke-opacity="0.25"/>
+  </g>
+</svg>

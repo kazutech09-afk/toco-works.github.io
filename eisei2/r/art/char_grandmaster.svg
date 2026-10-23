@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 256" width="200" height="256">
+  <!-- 最上位「グランドマスター（合格圏内の目安）」／素体A・髪C（低い一つ結び）。文字は入れない。 -->
+  <!-- 特徴：夜藍の長外套＋真鍮の刺しゅう、両肩の薄い肩当てと喉当て、三科目の三色の綬、浮かぶ魔導書、尖頭アーチ形の「灯杖剣」 -->
+  <g id="shadow">
+    <ellipse cx="100" cy="246" rx="58" ry="6.5" fill="#000000" fill-opacity="0.2"/>
+  </g>
+  <g id="cape">
+    <path d="M76,72 C62,92 54,170 50,238 L150,238 C146,170 138,92 124,72 Z" fill="#1B2740"/>
+    <path id="cape-lining" d="M76,72 C66,92 60,150 58,200 L64,200 C66,150 72,100 80,76 Z" fill="#2E3E5E"/>
+    <path id="cape-hem" d="M51.2,226 L148.8,226 L150,238 L50,238 Z" fill="#141D31"/>
+    <path id="cape-hem-pattern" d="M58,232 L61,229 L64,232 L61,235 Z M70,232 L73,229 L76,232 L73,235 Z M124,232 L127,229 L130,232 L127,235 Z M136,232 L139,229 L142,232 L139,235 Z" fill="#C9A458"/>
+  </g>
+  <g id="hair-back">
+    <path d="M84,50 C82,30 90,22 100,22 C110,22 118,30 116,50 L113,54 L87,54 Z" fill="#3B2A20"/>
+    <path id="hair-tail" d="M107,56 C119,62 121,82 113,100 C111,86 107,72 103,62 Z" fill="#3B2A20"/>
+    <polygon id="hair-tie" points="106,60 112,62 111,66 105,64" fill="#C9A458"/>
+  </g>
+  <g id="body">
+    <rect id="neck" x="94" y="58" width="12" height="14" rx="3" fill="#DDB590"/>
+  </g>
+  <g id="legs">
+    <path d="M87,150 L99,150 L98,214 L88,214 Z" fill="#2A3346"/>
+    <path d="M101,150 L113,150 L112,214 L102,214 Z" fill="#242C3D"/>
+  </g>
+  <g id="boots">
+    <path d="M86.5,200 L98.5,200 L98.5,236 C98.5,240 96,242 92,242 L80,242 C80,238 83,235 86.5,233 Z" fill="#A9B3BD"/>
+    <path d="M101.5,200 L113.5,200 L113.5,233 C117,235 120,238 120,242 L108,242 C104,242 101.5,240 101.5,236 Z" fill="#8E98A3"/>
+    <rect x="86.5" y="200" width="12" height="3" fill="#C9A458"/>
+    <rect x="101.5" y="200" width="12" height="3" fill="#C9A458"/>
+  </g>
+  <g id="outfit">
+    <path id="sleeve-l" d="M77,74 C70,76 66,83 65,93 L63,138 L75,140 L78,102 Z" fill="#22344A"/>
+    <path id="sleeve-r" d="M123,74 C130,76 134,83 135,93 L137,138 L125,140 L122,102 Z" fill="#22344A"/>
+    <path id="coat" d="M77,74 C87,70 113,70 123,74 L124,114 L133,228 L108,228 L101,152 L99,152 L92,228 L67,228 L76,114 Z" fill="#22344A"/>
+    <path id="coat-shade" d="M113,72 L123,74 L124,114 L133,228 L118,228 Z" fill="#000000" fill-opacity="0.16"/>
+    <path id="coat-embroidery" d="M92,228 L99,152 M108,228 L101,152 M67,224 L92,224 M108,224 L133,224" stroke="#C9A458" stroke-width="1.5" fill="none"/>
+    <path d="M80,214 L83,210 L86,214 L83,218 Z M114,214 L117,210 L120,214 L117,218 Z" fill="#C9A458"/>
+    <path id="tabard" d="M90,78 L110,78 L112,150 L100,160 L88,150 Z" fill="#E9E1CC" stroke="#C9A458" stroke-width="1.4"/>
+    <rect id="cuff-l" x="62.5" y="132" width="13" height="8" fill="#A9B3BD"/>
+    <rect x="62.5" y="132" width="13" height="2" fill="#C9A458"/>
+    <rect id="cuff-r" x="124.5" y="132" width="13" height="8" fill="#A9B3BD"/>
+    <rect x="124.5" y="132" width="13" height="2" fill="#C9A458"/>
+  </g>
+  <g id="emblem">
+    <polygon points="100,133 106.93,137 106.93,145 100,149 93.07,145 93.07,137" fill="#2F4F6F" stroke="#C9A458" stroke-width="1.6"/>
+    <ellipse cx="100" cy="137.6" rx="1.9" ry="3.5" fill="#F0946A"/>
+    <ellipse cx="100" cy="137.6" rx="1.9" ry="3.5" fill="#5CC2B6" transform="rotate(120 100 141)"/>
+    <ellipse cx="100" cy="137.6" rx="1.9" ry="3.5" fill="#B4A2F0" transform="rotate(240 100 141)"/>
+  </g>
+  <g id="accessory">
+    <path id="sash-atk" d="M113,80 L116.9,82.2 L93.9,124 L90,121.8 Z" fill="#B4532A"/>
+    <path id="sash-def" d="M116.9,82.2 L120.9,84.3 L97.9,126.1 L93.9,124 Z" fill="#1F6F6A"/>
+    <path id="sash-int" d="M120.9,84.3 L124.8,86.5 L101.8,128.3 L97.9,126.1 Z" fill="#5B4A9E"/>
+    <rect id="belt" x="77" y="120" width="46" height="6" fill="#1A2230"/>
+    <polygon id="buckle" points="96,118.5 99.9,120.75 99.9,125.25 96,127.5 92.1,125.25 92.1,120.75" fill="#C9A458"/>
+    <rect id="ear-cuff" x="83" y="45" width="2.5" height="3.5" rx="0.8" fill="#C9A458"/>
+  </g>
+  <g id="armor">
+    <path id="gorget" d="M83,70 C91,77 109,77 117,70 L119,81 C109,88 91,88 81,81 Z" fill="#A9B3BD"/>
+    <path d="M81,81 C91,88 109,88 119,81" fill="none" stroke="#C9A458" stroke-width="1.4"/>
+    <path id="pauldron-l" d="M62,93 C60,77 72,67 89,70 L90,81 C80,83 72,89 67,99 Z" fill="#A9B3BD"/>
+    <path d="M62,93 C60,77 72,67 89,70" fill="none" stroke="#C9A458" stroke-width="1.6"/>
+    <path d="M64,102 C69,93 78,88 88,87 L88,92 C80,93 73,98 68,106 Z" fill="#8E98A3"/>
+    <path id="pauldron-r" d="M138,93 C140,77 128,67 111,70 L110,81 C120,83 128,89 133,99 Z" fill="#A9B3BD"/>
+    <path d="M138,93 C140,77 128,67 111,70" fill="none" stroke="#C9A458" stroke-width="1.6"/>
+    <path d="M136,102 C131,93 122,88 112,87 L112,92 C120,93 127,98 132,106 Z" fill="#8E98A3"/>
+    <circle cx="74" cy="80" r="2" fill="#C9A458"/>
+    <circle cx="126" cy="80" r="2" fill="#C9A458"/>
+  </g>
+  <g id="grimoire">
+    <polygon id="grimoire-cover" points="40,113 56,118 72,113 72,126 56,131 40,126" fill="#22344A"/>
+    <polygon points="42,112 56,116 56,128 42,124" fill="#F3ECD9"/>
+    <polygon points="56,116 70,112 70,124 56,128" fill="#E9E1CC"/>
+    <path d="M45,116 L53,118.5 M45,119.5 L53,122 M59,118.5 L67,116 M59,122 L67,119.5" stroke="#4A6E92" stroke-width="0.9"/>
+    <path id="sparkle" d="M56,102 L57.5,105.5 L56,109 L54.5,105.5 Z M46,106 L47,108 L46,110 L45,108 Z M66,105 L67,107 L66,109 L65,107 Z" fill="#E9C46A"/>
+  </g>
+  <g id="weapon">
+    <rect id="staff" x="132" y="46" width="4" height="192" rx="2" fill="#3A2E26"/>
+    <rect x="130.5" y="92" width="7" height="3" rx="1" fill="#C9A458"/>
+    <rect x="130.5" y="200" width="7" height="3" rx="1" fill="#C9A458"/>
+    <path id="staff-head" d="M134,2 C145,12 147,30 141,46 L127,46 C121,30 123,12 134,2 Z" fill="#22344A" stroke="#C9A458" stroke-width="2.5"/>
+    <ellipse id="staff-light" cx="134" cy="27" rx="7" ry="13" fill="#F6E3A6"/>
+    <ellipse cx="134" cy="24" rx="2.2" ry="4.2" fill="#B4532A"/>
+    <ellipse cx="134" cy="24" rx="2.2" ry="4.2" fill="#1F6F6A" transform="rotate(120 134 28)"/>
+    <ellipse cx="134" cy="24" rx="2.2" ry="4.2" fill="#5B4A9E" transform="rotate(240 134 28)"/>
+    <ellipse cx="134" cy="48" rx="9" ry="3" fill="#C9A458"/>
+  </g>
+  <g id="hands">
+    <circle cx="69" cy="145" r="6" fill="#EBC8A2"/>
+    <circle cx="134" cy="146" r="6" fill="#EBC8A2"/>
+  </g>
+  <g id="head">
+    <ellipse cx="84.5" cy="46" rx="2.6" ry="4.2" fill="#E2BC97"/>
+    <ellipse cx="115.5" cy="46" rx="2.6" ry="4.2" fill="#E2BC97"/>
+    <path id="skin-face" d="M85,43 C85,31 91,26 100,26 C109,26 115,31 115,43 C115,55 109,64 100,65 C91,64 85,55 85,43 Z" fill="#EBC8A2"/>
+    <path id="face-shade" d="M108,28 C113,31 115,36 115,43 C115,55 109,64 100,65 C106,58 109,48 108,28 Z" fill="#000000" fill-opacity="0.06"/>
+  </g>
+  <g id="face">
+    <ellipse cx="94" cy="46.2" rx="1.8" ry="1.9" fill="#2A2420"/>
+    <ellipse cx="106" cy="46.2" rx="1.8" ry="1.9" fill="#2A2420"/>
+    <path d="M90.5,41.8 L97,40.6 M103,40.6 L109.5,41.8" stroke="#3A2E26" stroke-width="1.4" stroke-linecap="round"/>
+    <path d="M100,48 L99,53 L101,53.5" stroke="#C99F7A" stroke-width="1" fill="none" stroke-linecap="round"/>
+    <path d="M96.8,57.4 Q100,58.4 103.2,57.4" stroke="#9A5E4A" stroke-width="1.2" fill="none" stroke-linecap="round"/>
+  </g>
+  <g id="hair-front">
+    <path d="M84.5,44 C83,30 90,23 100,23 C111,23 117,30 115.5,44 C114,38 112,35 109,33 C103,36 95,37 88,36 C86.5,39 85.5,41 84.5,44 Z" fill="#3B2A20"/>
+    <path d="M115,40 C117.5,48 116.5,55 113,60 L113,46 Z" fill="#3B2A20"/>
+    <path d="M94,26 C100,24 106,25 109,28 C104,27 99,27 94,28 Z" fill="#5A4130"/>
+  </g>
+</svg>
