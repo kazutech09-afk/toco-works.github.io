@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="ja" data-no-text>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-Du+OJKJSbdUgz5nrHeWWINvez6XKDDU/tyj/5c2uvwo='; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>ライバルコード | Toco Works</title>
+<meta name="description" content="ライバルコード（学習アプリの成績カードのコード）を受け取るページです。Toco Works の学習アプリ（準備中）。">
+<meta name="robots" content="noindex">
+<meta name="color-scheme" content="light dark">
+<meta property="og:title" content="ライバルから早解き対決の誘いが届きました | Toco Works">
+<meta property="og:description" content="Toco Works の学習アプリ（準備中）のライバルコードです。">
+<!--
+  ライバルコードの受け口ページ（shikaku-apps ボード S1-88。設計：shikaku-apps/00_plan/rpg/ux.md 10-19・visual.md 14-4）。
+  - URL は https://toco-works.com/eisei2/r/#c=<コード>。コードは「#」の後ろなので、サーバー（GitHub Pages）には送られない
+  - このページは text フォルダの .txt を使わない（data-no-text。上と下のメニューだけ text/common.txt から組み立てる）
+  - コードは表示するだけ。正しいかどうか（署名）の判定はアプリがする。署名の鍵はこのページに置かない
+  - 計測ツール・外部のスクリプトは使わない
+  - SMART-APP-BANNER：公開を決めた日に、下の行の「#」を外して App Store の ID を入れる（U-13・Q7）
+    <meta name="apple-itunes-app" content="app-id=［App Store の ID］">
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=Zen+Maru+Gothic:wght@500;700&display=swap">
+<link rel="stylesheet" href="/assets/site.css">
+<link rel="stylesheet" href="/eisei2/r/rival.css">
+<link rel="icon" href="/assets/mark.svg" type="image/svg+xml">
+<script>document.documentElement.classList.add('js')</script>
+<script src="/assets/site.js" defer></script>
+<script src="/eisei2/r/rival.js" defer></script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
+{"@type":"ListItem","position":1,"name":"Toco Works","item":"https://toco-works.com/"},
+{"@type":"ListItem","position":2,"name":"第二種衛生管理者の学習アプリ","item":"https://toco-works.com/eisei2/"},
+{"@type":"ListItem","position":3,"name":"ライバルコード"}]}
+</script>
+</head>
+<body>
+<header class="top"><div class="in"><a class="brand" href="/"><img class="mark" src="/assets/mark.svg" alt="" width="34" height="34">Toco Works</a><nav><a href="/#works">つくっているもの</a><a href="/#about">大切にしていること</a><a class="keep" href="/contact/">お問い合わせ</a></nav></div></header>
+
+<main class="page r-page">
+  <nav class="r-crumb" aria-label="パンくず">
+    <ol>
+      <li><a href="/">Toco Works</a></li>
+      <li><a href="/eisei2/">第二種衛生管理者の学習アプリ</a></li>
+      <li aria-current="page">ライバルコード</li>
+    </ol>
+  </nav>
+
+  <p class="r-eyebrow">RIVAL CODE</p>
+  <h1 id="r-title">ライバルから<wbr>早解き対決の<wbr>誘いが<wbr>届きました</h1>
+
+  <!-- 相手のカード（JavaScript がコードから描く。描くまでの間はスケルトン） -->
+  <div id="r-slot" aria-live="polite">
+    <div class="r-card r-skel" aria-hidden="true">
+      <div class="r-top"><div class="r-fig"></div><div class="r-who"><i></i><i></i><i></i></div></div>
+      <div class="r-skel-radar"></div>
+    </div>
+  </div>
+  <noscript><p class="r-plain">このページは、JavaScript でコードを読んで相手のキャラクターを描きます。JavaScript をオンにして開き直すか、アプリの「ライバルを読み込む」でコードを読み込んでください。</p></noscript>
+
+  <ul class="r-facts" aria-label="アプリの料金">
+    <!-- 金額は shikaku-apps/04_app/content/eisei2/config.json の price・ストアの値段と必ずそろえる -->
+    <li>無料で30問＋序章ボス</li>
+    <li>登録なし</li>
+    <li>全部は500円を1回だけ</li>
+  </ul>
+
+  <!-- アプリで開く（iOS＝アプリのスキーム／Android＝intent://。押して進む形。自動では飛ばさない） -->
+  <div id="r-open" class="r-open" hidden>
+    <a id="r-open-btn" class="btn r-btn-main" href="#">アプリで開いて対決する</a>
+    <p id="r-open-note" class="r-note">アプリが入っていれば、相手が模擬戦の相手に登録されます。</p>
+    <p id="r-opening" class="r-note r-opening" hidden>アプリを開いています…</p>
+    <div id="r-noapp" class="r-noapp" hidden>
+      <p><b>アプリが開きませんでしたか？</b></p>
+      <p>アプリが入っていないと開きません（iPhone では「アドレスが無効です」と出ることがあります）。アプリは準備中です。下の［コードをコピー］でコードを控えておくと、アプリを入れた後に貼り付けて対決できます。</p>
+    </div>
+    <p id="r-pc" class="r-note" hidden>パソコンではアプリを開けません。このページをスマホで開くか、下のコードをスマホに送ってください。</p>
+  </div>
+
+  <!-- STORE-BUTTONS：公開を決めた日に、この箱の中身を App Store・Google Play の公式バッジ（改変しない・高さ40以上）に差し替える。
+       リンクには入口の印を付ける（App Store：pt＝プロバイダ ID・ct=rival_qr／rival_share、Google Play：&referrer=utm_source%3Drival_qr など。Q6）。
+       それまでは「準備中」の表示（U-13：アプリ名・ストアの URL は公開を決めるまで書かない） -->
+  <div class="r-store" id="r-store">
+    <p class="r-store-name">Toco Works の学習アプリ（準備中）</p>
+    <div class="r-badges">
+      <span class="r-badge" aria-disabled="true">App Store<br><small>準備中</small></span>
+      <span class="r-badge" aria-disabled="true">Google Play<br><small>準備中</small></span>
+    </div>
+    <p class="r-note">ストアのリンクは、公開しだいここに載せます。Android 版も準備中です。</p>
+  </div>
+
+  <div id="r-codebox" class="r-codebox" hidden>
+    <p class="r-note">先にコードをコピーしておくと、アプリを入れた後の最初の画面で貼れます。</p>
+    <code id="r-code" class="r-code" translate="no"></code>
+    <button type="button" id="r-copy" class="r-btn-sub">コードをコピー</button>
+  </div>
+
+  <h2 class="rv">アプリを入れた後は</h2>
+  <ol class="r-steps rv">
+    <li>チュートリアル（約2〜3分）を終える</li>
+    <li>「ライバルのコードを持っていますか？」で［貼り付ける］を押す</li>
+    <li>早解き対決（5問）で勝負</li>
+  </ol>
+
+  <h2 class="rv">どんなアプリ？</h2>
+  <p class="r-lead rv">第二種衛生管理者の問題を解いて、キャラクターを育てる学習 RPG です（Toco Works の学習アプリ・準備中）。</p>
+  <!-- 画面のイメージ（カルーセル）。公開したら、ストアのスクリーンショットと同じ物に差し替える -->
+  <div class="r-shots rv" role="region" aria-label="アプリの画面のイメージ（横にスクロールできます）" tabindex="0">
+    <figure>
+      <div class="r-ph"><div class="r-band"><img class="a" src="/eisei2/r/art/char_lv5_apprentice.svg" alt="" width="45" height="58" loading="lazy"><img class="b" src="/eisei2/r/art/enemy_mayoi_komori.svg" alt="" width="46" height="46" loading="lazy"></div><div class="r-paper"><i></i><i class="s"></i><b></b><b></b><b></b></div></div>
+      <figcaption>正解すると攻撃。1問ずつ出典つきの解説</figcaption>
+    </figure>
+    <figure>
+      <div class="r-ph"><div class="r-band v2"><img class="a" src="/eisei2/r/art/char_mage_t1.svg" alt="" width="45" height="58" loading="lazy"><img class="b" src="/eisei2/r/art/boss_hakuju.svg" alt="" width="54" height="54" loading="lazy"></div><div class="r-paper"><i></i><i class="s"></i><b></b><b></b><b></b></div></div>
+      <figcaption>単元の最後はボス（まとめのテスト）</figcaption>
+    </figure>
+    <figure>
+      <div class="r-ph"><div class="r-band v3"><img class="a" src="/eisei2/r/art/char_fighter_t1.svg" alt="" width="45" height="58" loading="lazy"><img class="b" src="/eisei2/r/art/enemy_komura_ishi.svg" alt="" width="46" height="46" loading="lazy"></div><div class="r-paper"><i></i><i class="s"></i><b></b><b></b><b></b></div></div>
+      <figcaption>忘れかけた問題は「サビ」になり、復習で落とす</figcaption>
+    </figure>
+  </div>
+  <div class="cards r-feats">
+    <article class="card rv"><h3>すべての問題に出典</h3><p>法令の条文番号や厚生労働省の資料名を表示します。原文で確かめられます。</p></article>
+    <article class="card rv"><h3>3科目がそのままステータス</h3><p>関係法令＝ATK、労働衛生＝DEF、労働生理＝INT。足りない科目がひと目で分かります。</p></article>
+  </div>
+
+  <h2 class="rv">よくある質問</h2>
+  <div class="r-faq">
+    <details class="rv"><summary>ライバルコードとは？</summary><p>アプリの「ギルドカード」（成績カード）に付いているコードです。読み込むと、その人の成績を相手にした早解き対決（5問）ができます。相手と通信はしません。</p></details>
+    <details class="rv"><summary>個人情報は入っていますか？</summary><p>入っているのは、ニックネーム・ジョブ・Lv・ステータス・見た目・コードを作った日だけです。本名・メールアドレス・端末の情報は入っていません。このページはコードを画面に描くだけで、コードをこのページの外（運営者を含む）に送りません。</p></details>
+    <details class="rv"><summary>お金はかかりますか？</summary><p>無料で30問と序章のボス、無料の問題だけで出す本試験の塔（模擬試験）まで使えます。すべての問題は、アプリ内課金「全問題解放」（500円・税込・買い切り）で使えます。月額の料金はありません。</p></details>
+  </div>
+
+  <p class="r-legal">この学習アプリは、試験の実施団体が作成・公認したものではありません。合格を保証するものではありません。</p>
+</main>
+
+<div id="r-toast" class="r-toast" role="status" aria-live="polite"></div>
+
+<footer><div class="in"><a class="brand" href="/"><img class="mark" src="/assets/mark.svg" alt="" width="28" height="28">Toco Works</a><nav><a href="/contact/">お問い合わせ</a><a href="/privacy/">プライバシーポリシー</a><a href="/tokushoho/">特定商取引法に基づく表記</a></nav><span>© Toco Works</span></div></footer>
+</body>
+</html>
